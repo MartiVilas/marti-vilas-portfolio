@@ -1,0 +1,179 @@
+---
+const skills = [
+	"HTML",
+	"CSS",
+	"JavaScript",
+	"Astro",
+	"Responsive design",
+	"Git",
+	"UI design",
+	"Accesibilidad",
+	"React",
+	"TypseScript",
+];
+
+const languages = [
+	{
+		name: "Español",
+		level: "Nativo",
+	},
+	{
+		name: "Català",
+		level: "Natiu",
+	},
+	{
+		name: "Inglés",
+		level: "B2.2",
+	},
+];
+---
+
+<section class="skills-languages" id="skills" aria-labelledby="skills-title">
+	<div class="section-heading">
+		<p class="eyebrow">Skills & languages</p>
+		<h2 id="skills-title">Herramientas e idiomas</h2>
+	</div>
+
+	<div class="content-grid">
+		<div class="skills-panel">
+			<h3>Skills</h3>
+			<ul class="skill-list" aria-label="Skills">
+				{skills.map((skill) => <li>{skill}</li>)}
+			</ul>
+		</div>
+
+		<div class="language-panel">
+			<h3>Idiomes</h3>
+			<ul class="language-list" aria-label="Languages">
+				{
+					languages.map((language) => (
+						<li>
+							<span>{language.name}</span>
+							<strong>{language.level}</strong>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+</section>
+
+<style>
+	.skills-languages {
+		padding: clamp(4rem, 8vw, 7rem) 0;
+		border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+	}
+
+	.section-heading {
+		margin-bottom: 2rem;
+	}
+
+	.eyebrow {
+		margin: 0 0 0.6rem;
+		color: #8b3f2f;
+		font-size: 0.78rem;
+		font-weight: 800;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		max-width: 760px;
+		margin: 0;
+		font-size: clamp(2rem, 4vw, 3.6rem);
+		line-height: 1;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+		gap: 1rem;
+	}
+
+	.skills-panel,
+	.language-panel {
+		border: 1px solid rgba(23, 23, 23, 0.14);
+		border-radius: 8px;
+		background: #fffaf2;
+		padding: clamp(1.1rem, 2vw, 1.5rem);
+		box-shadow: 0 18px 45px rgba(50, 42, 34, 0.08);
+	}
+
+	h3 {
+		margin: 0 0 1.2rem;
+		font-size: clamp(1.25rem, 2vw, 1.65rem);
+	}
+
+	.skill-list,
+	.language-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.skill-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem;
+	}
+
+	.skill-list li {
+		border: 1px solid rgba(23, 23, 23, 0.14);
+		border-radius: 999px;
+		background: #f4efe6;
+		padding: 0.58rem 0.82rem;
+		color: #3c3935;
+		font-size: 0.94rem;
+		font-weight: 800;
+	}
+
+	.language-list {
+		display: grid;
+		gap: 0;
+	}
+
+	.language-list li {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 0.95rem 0;
+		border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+	}
+
+	.language-list li:first-child {
+		padding-top: 0;
+	}
+
+	.language-list li:last-child {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.language-list span {
+		color: #171717;
+		font-weight: 850;
+	}
+
+	.language-list strong {
+		color: #2f6f73;
+		font-size: 0.95rem;
+		text-align: right;
+	}
+
+	@media (max-width: 860px) {
+		.content-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.language-list li {
+			align-items: start;
+			flex-direction: column;
+			gap: 0.25rem;
+		}
+
+		.language-list strong {
+			text-align: left;
+		}
+	}
+</style>

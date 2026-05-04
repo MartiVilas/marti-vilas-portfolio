@@ -1,0 +1,104 @@
+---
+const highlights = [
+	"Desarrollo frontend con HTML, CSS, JavaScript y Astro.",
+	"Maquetación responsive y componentes reutilizables.",
+	"Comunicación clara, organización y mentalidad de producto.",
+	"Interés por rendimiento, accesibilidad y buen diseño visual.",
+];
+---
+
+<section class="cv" id="cv" aria-labelledby="cv-title">
+	<div>
+		<p class="eyebrow">CV</p>
+		<h2 id="cv-title">Perfil profesional</h2>
+		<p class="intro">
+			Un resumen breve para entender rápidamente qué puedo aportar a un equipo o proyecto.
+		</p>
+	</div>
+	<ul>
+		{highlights.map((item) => <li>{item}</li>)}
+	</ul>
+	<a href="mailto:hola@martivilas.dev" class="button">Contactar</a>
+</section>
+
+<style>
+	.cv {
+		display: grid;
+		grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr) auto;
+		gap: 2rem;
+		align-items: center;
+		padding: clamp(3rem, 6vw, 5rem) 0;
+		border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+	}
+
+	.eyebrow {
+		margin: 0 0 0.6rem;
+		color: #8b3f2f;
+		font-size: 0.78rem;
+		font-weight: 800;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: clamp(2rem, 3.5vw, 3.2rem);
+		line-height: 1;
+	}
+
+	.intro {
+		max-width: 34rem;
+		margin: 1rem 0 0;
+		color: #565149;
+		line-height: 1.65;
+	}
+
+	ul {
+		display: grid;
+		gap: 0.8rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		position: relative;
+		padding-left: 1.3rem;
+		color: #3c3935;
+		line-height: 1.55;
+	}
+
+	li::before {
+		position: absolute;
+		top: 0.72em;
+		left: 0;
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #2f6f73;
+		content: "";
+	}
+
+	.button {
+		display: inline-flex;
+		min-width: 124px;
+		justify-content: center;
+		border-radius: 8px;
+		background: #171717;
+		padding: 0.9rem 1.2rem;
+		color: #fffaf2;
+		font-weight: 800;
+		text-decoration: none;
+	}
+
+	@media (max-width: 920px) {
+		.cv {
+			grid-template-columns: 1fr;
+			align-items: start;
+		}
+
+		.button {
+			width: fit-content;
+		}
+	}
+</style>

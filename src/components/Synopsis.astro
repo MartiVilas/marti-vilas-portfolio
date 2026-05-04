@@ -1,0 +1,63 @@
+<section class="synopsis" id="sinopsis" aria-labelledby="synopsis-title">
+	<div class="section-copy">
+		<p class="eyebrow">Sinopsis</p>
+		<h2 id="synopsis-title">Construyo productos digitales con criterio, detalle y mucho oficio.</h2>
+	</div>
+	<div class="text-stack">
+		<p>
+			Soy Marti Vilas, desarrollador enfocado en crear experiencias web claras, rápidas y
+			cuidadas. Me gusta trabajar cerca del problema: entender lo que necesita el usuario,
+			convertirlo en interfaz y dejar una base técnica mantenible.
+		</p>
+		<p>
+			Este portfolio reúne proyectos, recorrido profesional, formación y una versión breve de mi
+			CV para que puedas conocer cómo trabajo de un vistazo.
+		</p>
+	</div>
+</section>
+
+<style>
+	.synopsis {
+		display: grid;
+		grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+		gap: clamp(2rem, 6vw, 5rem);
+		padding: clamp(4rem, 8vw, 7rem) 0;
+		border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+	}
+
+	.eyebrow {
+		margin: 0 0 0.75rem;
+		color: #8b3f2f;
+		font-size: 0.78rem;
+		font-weight: 800;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		margin: 0;
+		max-width: 760px;
+		font-size: clamp(2rem, 4vw, 4.3rem);
+		line-height: 0.98;
+		font-weight: 850;
+	}
+
+	.text-stack {
+		display: grid;
+		gap: 1.2rem;
+		align-content: end;
+	}
+
+	p {
+		margin: 0;
+		color: #4a4742;
+		font-size: clamp(1rem, 1.45vw, 1.18rem);
+		line-height: 1.75;
+	}
+
+	@media (max-width: 820px) {
+		.synopsis {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

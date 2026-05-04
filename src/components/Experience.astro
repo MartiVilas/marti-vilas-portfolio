@@ -1,0 +1,103 @@
+---
+const experiences = [
+	{
+		role: "Desarrollador Frontend",
+		place: "Proyectos personales y freelance",
+		period: "2025 - Actualidad",
+		description:
+			"Creación de interfaces responsive, landings y componentes web enfocados en claridad, velocidad y mantenimiento.",
+	},
+	{
+		role: "Soporte técnico y desarrollo web",
+		place: "Entornos formativos",
+		period: "2024 - 2025",
+		description:
+			"Resolución de incidencias, documentación técnica y desarrollo de pequeñas herramientas para mejorar flujos internos.",
+	},
+];
+---
+
+<section class="timeline-section" id="experiencia" aria-labelledby="experience-title">
+	<p class="eyebrow">Experiencia</p>
+	<h2 id="experience-title">Dónde he aprendido haciendo</h2>
+	<div class="timeline">
+		{
+			experiences.map((experience) => (
+				<article class="timeline-item">
+					<p class="period">{experience.period}</p>
+					<div>
+						<h3>{experience.role}</h3>
+						<p class="place">{experience.place}</p>
+						<p>{experience.description}</p>
+					</div>
+				</article>
+			))
+		}
+	</div>
+</section>
+
+<style>
+	.timeline-section {
+		padding: clamp(4rem, 8vw, 7rem) 0;
+		border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+	}
+
+	.eyebrow {
+		margin: 0 0 0.6rem;
+		color: #8b3f2f;
+		font-size: 0.78rem;
+		font-weight: 800;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		max-width: 760px;
+		margin: 0 0 2.2rem;
+		font-size: clamp(2rem, 4vw, 3.6rem);
+		line-height: 1;
+	}
+
+	.timeline {
+		display: grid;
+		border-top: 1px solid rgba(23, 23, 23, 0.14);
+	}
+
+	.timeline-item {
+		display: grid;
+		grid-template-columns: 210px minmax(0, 1fr);
+		gap: 2rem;
+		padding: 1.6rem 0;
+		border-bottom: 1px solid rgba(23, 23, 23, 0.14);
+	}
+
+	.period {
+		margin: 0;
+		color: #8b3f2f;
+		font-weight: 800;
+	}
+
+	h3 {
+		margin: 0;
+		font-size: clamp(1.25rem, 2vw, 1.65rem);
+	}
+
+	.place {
+		margin: 0.45rem 0 0.8rem;
+		color: #2f6f73;
+		font-weight: 800;
+	}
+
+	p {
+		margin: 0;
+		color: #565149;
+		line-height: 1.65;
+	}
+
+	@media (max-width: 720px) {
+		.timeline-item {
+			grid-template-columns: 1fr;
+			gap: 0.8rem;
+		}
+	}
+</style>

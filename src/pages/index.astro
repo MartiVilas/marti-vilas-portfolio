@@ -1,11 +1,198 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import CV from '../components/CV.astro';
+import Education from '../components/Education.astro';
+import Experience from '../components/Experience.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Projects from '../components/Projects.astro';
+import SkillsLanguages from '../components/SkillsLanguages.astro';
+import Synopsis from '../components/Synopsis.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<header class="site-header">
+		<a href="#inicio" class="brand">Marti Vilas</a>
+		<nav aria-label="Navegacion principal">
+			<a href="#skills">Skills</a>
+			<a href="#proyectos">Proyectos</a>
+			<a href="#cv">CV</a>
+			<a href="#experiencia">Experiencia</a>
+			<a href="#estudios">Estudios</a>
+		</nav>
+	</header>
+
+	<main id="inicio">
+		<section class="hero" aria-labelledby="hero-title">
+			<div class="hero-copy">
+				<p class="eyebrow">Portfolio personal</p>
+				<h1 id="hero-title">Marti Vilas</h1>
+				<p>
+					Desarrollador web con foco en interfaces limpias, productos útiles y código que no da
+					pereza mantener.
+				</p>
+				<div class="hero-actions">
+					<a href="#proyectos" class="primary">Ver proyectos</a>
+					<a href="#cv">Leer CV</a>
+				</div>
+			</div>
+			<div class="hero-panel" aria-label="Resumen rapido">
+				<p>Disponible para proyectos web, prácticas y colaboraciones.</p>
+				<span>Frontend · Astro · JavaScript · UI</span>
+			</div>
+		</section>
+
+		<div class="content">
+			<Synopsis />
+			<SkillsLanguages />
+			<Projects />
+			<CV />
+			<Experience />
+			<Education />
+		</div>
+	</main>
 </Layout>
+
+<style>
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5rem;
+		padding: 1rem clamp(1rem, 4vw, 3rem);
+		border-bottom: 1px solid rgba(23, 23, 23, 0.1);
+		background: rgba(246, 243, 238, 0.86);
+		backdrop-filter: blur(18px);
+	}
+
+	.brand {
+		font-weight: 900;
+		text-decoration: none;
+	}
+
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: end;
+		gap: 0.45rem 1rem;
+		color: #4a4742;
+		font-size: 0.95rem;
+		font-weight: 700;
+	}
+
+	nav a {
+		text-decoration: none;
+	}
+
+	.hero {
+		display: grid;
+		min-height: calc(100svh - 66px);
+		grid-template-columns: minmax(0, 1fr) minmax(280px, 0.36fr);
+		gap: clamp(2rem, 5vw, 5rem);
+		align-items: end;
+		padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 4vw, 3rem) clamp(2rem, 5vw, 4rem);
+		background:
+			linear-gradient(rgba(246, 243, 238, 0.48), rgba(246, 243, 238, 0.82)),
+			url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80")
+				center/cover;
+	}
+
+	.hero-copy {
+		max-width: 950px;
+	}
+
+	.eyebrow {
+		margin: 0 0 0.8rem;
+		color: #8b3f2f;
+		font-size: 0.8rem;
+		font-weight: 900;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		margin: 0;
+		font-size: clamp(4.2rem, 13vw, 11rem);
+		line-height: 0.82;
+		font-weight: 950;
+	}
+
+	.hero-copy > p:not(.eyebrow) {
+		max-width: 690px;
+		margin: 1.4rem 0 0;
+		color: #34312d;
+		font-size: clamp(1.15rem, 2vw, 1.55rem);
+		line-height: 1.45;
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		margin-top: 2rem;
+	}
+
+	.hero-actions a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid rgba(23, 23, 23, 0.25);
+		border-radius: 8px;
+		background: rgba(255, 250, 242, 0.78);
+		padding: 0.9rem 1.1rem;
+		font-weight: 850;
+		text-decoration: none;
+	}
+
+	.hero-actions .primary {
+		border-color: #171717;
+		background: #171717;
+		color: #fffaf2;
+	}
+
+	.hero-panel {
+		border: 1px solid rgba(23, 23, 23, 0.18);
+		border-radius: 8px;
+		background: rgba(255, 250, 242, 0.88);
+		padding: 1.2rem;
+		box-shadow: 0 22px 55px rgba(50, 42, 34, 0.12);
+	}
+
+	.hero-panel p {
+		margin: 0 0 1rem;
+		font-size: 1.2rem;
+		font-weight: 850;
+		line-height: 1.25;
+	}
+
+	.hero-panel span {
+		color: #565149;
+		font-size: 0.95rem;
+		font-weight: 750;
+	}
+
+	.content {
+		width: min(1180px, calc(100% - 2rem));
+		margin: 0 auto;
+	}
+
+	@media (max-width: 850px) {
+		.site-header {
+			position: static;
+			align-items: start;
+			flex-direction: column;
+		}
+
+		nav {
+			justify-content: start;
+		}
+
+		.hero {
+			min-height: auto;
+			grid-template-columns: 1fr;
+			align-items: start;
+			padding-top: 5rem;
+		}
+	}
+</style>
