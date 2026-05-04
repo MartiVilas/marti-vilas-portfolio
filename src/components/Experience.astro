@@ -39,12 +39,12 @@ const experiences = [
 <style>
 	.timeline-section {
 		padding: clamp(4rem, 8vw, 7rem) 0;
-		border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+		border-bottom: 1px solid var(--color-border);
 	}
 
 	.eyebrow {
 		margin: 0 0 0.6rem;
-		color: #8b3f2f;
+		color: var(--color-accent);
 		font-size: 0.78rem;
 		font-weight: 800;
 		letter-spacing: 0.14em;
@@ -54,13 +54,14 @@ const experiences = [
 	h2 {
 		max-width: 760px;
 		margin: 0 0 2.2rem;
+		color: var(--color-text);
 		font-size: clamp(2rem, 4vw, 3.6rem);
 		line-height: 1;
 	}
 
 	.timeline {
 		display: grid;
-		border-top: 1px solid rgba(23, 23, 23, 0.14);
+		border-top: 1px solid var(--color-border);
 	}
 
 	.timeline-item {
@@ -68,29 +69,30 @@ const experiences = [
 		grid-template-columns: 210px minmax(0, 1fr);
 		gap: 2rem;
 		padding: 1.6rem 0;
-		border-bottom: 1px solid rgba(23, 23, 23, 0.14);
+		border-bottom: 1px solid var(--color-border);
 	}
 
 	.period {
 		margin: 0;
-		color: #8b3f2f;
+		color: var(--color-accent);
 		font-weight: 800;
 	}
 
 	h3 {
 		margin: 0;
+		color: var(--color-text);
 		font-size: clamp(1.25rem, 2vw, 1.65rem);
 	}
 
 	.place {
 		margin: 0.45rem 0 0.8rem;
-		color: #2f6f73;
+		color: var(--color-success);
 		font-weight: 800;
 	}
 
 	p {
 		margin: 0;
-		color: #565149;
+		color: var(--color-text-muted);
 		line-height: 1.65;
 	}
 

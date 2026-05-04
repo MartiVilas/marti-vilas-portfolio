@@ -52,7 +52,7 @@ const projects = [
 <style>
 	.projects {
 		padding: clamp(4rem, 8vw, 7rem) 0;
-		border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+		border-bottom: 1px solid var(--color-border);
 	}
 
 	.section-heading {
@@ -65,7 +65,7 @@ const projects = [
 
 	.eyebrow {
 		margin: 0 0 0.6rem;
-		color: #8b3f2f;
+		color: var(--color-accent);
 		font-size: 0.78rem;
 		font-weight: 800;
 		letter-spacing: 0.14em;
@@ -74,6 +74,7 @@ const projects = [
 
 	h2 {
 		margin: 0;
+		color: var(--color-text);
 		font-size: clamp(2rem, 4vw, 3.6rem);
 		line-height: 1;
 	}
@@ -89,15 +90,19 @@ const projects = [
 		min-height: 320px;
 		flex-direction: column;
 		justify-content: space-between;
-		border: 1px solid rgba(23, 23, 23, 0.14);
+		border: 1px solid var(--color-border);
 		border-radius: 8px;
-		background: #fffaf2;
+		background: var(--color-bg-secondary);
 		padding: clamp(1.1rem, 2vw, 1.5rem);
-		box-shadow: 0 18px 45px rgba(50, 42, 34, 0.08);
+		box-shadow: 0 18px 45px rgba(var(--color-accent-rgb), 0.08);
+	}
+
+	.project-card:hover {
+		box-shadow: 0 18px 45px rgba(var(--color-accent-rgb), 0.16);
 	}
 
 	span {
-		color: #8b3f2f;
+		color: var(--color-accent);
 		font-size: 0.82rem;
 		font-weight: 800;
 		text-transform: uppercase;
@@ -105,12 +110,13 @@ const projects = [
 
 	h3 {
 		margin: 0.85rem 0 1rem;
+		color: var(--color-text);
 		font-size: clamp(1.35rem, 2vw, 1.75rem);
 	}
 
 	p {
 		margin: 0;
-		color: #565149;
+		color: var(--color-text-muted);
 		line-height: 1.65;
 	}
 
@@ -124,11 +130,11 @@ const projects = [
 	}
 
 	li {
-		border: 1px solid rgba(23, 23, 23, 0.14);
+		border: 1px solid var(--color-border);
 		border-radius: 999px;
 		padding: 0.42rem 0.72rem;
-		background: #f4efe6;
-		color: #3c3935;
+		background: var(--color-bg-tertiary);
+		color: var(--color-text);
 		font-size: 0.85rem;
 		font-weight: 700;
 	}

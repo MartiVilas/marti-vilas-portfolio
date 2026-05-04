@@ -22,12 +22,12 @@
 		grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
 		gap: clamp(2rem, 6vw, 5rem);
 		padding: clamp(4rem, 8vw, 7rem) 0;
-		border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+		border-bottom: 1px solid var(--color-border);
 	}
 
 	.eyebrow {
 		margin: 0 0 0.75rem;
-		color: #8b3f2f;
+		color: var(--color-accent);
 		font-size: 0.78rem;
 		font-weight: 800;
 		letter-spacing: 0.14em;
@@ -37,6 +37,7 @@
 	h2 {
 		margin: 0;
 		max-width: 760px;
+		color: var(--color-text);
 		font-size: clamp(2rem, 4vw, 4.3rem);
 		line-height: 0.98;
 		font-weight: 850;
@@ -50,7 +51,7 @@
 
 	p {
 		margin: 0;
-		color: #4a4742;
+		color: var(--color-text-muted);
 		font-size: clamp(1rem, 1.45vw, 1.18rem);
 		line-height: 1.75;
 	}

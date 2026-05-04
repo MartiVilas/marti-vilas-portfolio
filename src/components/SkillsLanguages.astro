@@ -1,15 +1,57 @@
 ---
-const skills = [
-	"HTML",
-	"CSS",
-	"JavaScript",
-	"Astro",
-	"Responsive design",
-	"Git",
-	"UI design",
-	"Accesibilidad",
-	"React",
-	"TypseScript",
+const frameworksAndLanguages = [
+	{
+		name: "PHP",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+	},
+	{
+		name: "React",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+	},
+	{
+		name: "TypeScript",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+	},
+	{
+		name: "JavaScript",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+	},
+	{
+		name: "NodeJS",
+		img: "/nodejs-logo-vector-png.png",
+	},
+	{
+		name: "Kotlin",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+	},
+	{
+		name: "MySQL",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+	},
+	{
+		name: "PostgreSQL",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+	},
+	{
+		name: "Vue",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+	},
+	{
+		name: "GitHub",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+	},
+	{
+		name: "GitLab",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg",
+	},
+	{
+		name: "Git",
+		img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+	},
+	{
+		name: "Astro",
+		img: "https://cdn.simpleicons.org/astro/FF5A03",
+	},
 ];
 
 const languages = [
@@ -31,14 +73,19 @@ const languages = [
 <section class="skills-languages" id="skills" aria-labelledby="skills-title">
 	<div class="section-heading">
 		<p class="eyebrow">Skills & languages</p>
-		<h2 id="skills-title">Herramientas e idiomas</h2>
 	</div>
 
 	<div class="content-grid">
 		<div class="skills-panel">
 			<h3>Skills</h3>
 			<ul class="skill-list" aria-label="Skills">
-				{skills.map((skill) => <li>{skill}</li>)}
+				{
+					frameworksAndLanguages.map((skill) => (
+						<li>
+							<img src={skill.img} alt={skill.name} title={skill.name} width="100" height="100" />
+						</li>
+					))
+				}
 			</ul>
 		</div>
 
@@ -61,7 +108,7 @@ const languages = [
 <style>
 	.skills-languages {
 		padding: clamp(4rem, 8vw, 7rem) 0;
-		border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+		border-bottom: 1px solid var(--color-border);
 	}
 
 	.section-heading {
@@ -70,18 +117,11 @@ const languages = [
 
 	.eyebrow {
 		margin: 0 0 0.6rem;
-		color: #8b3f2f;
+		color: var(--color-accent);
 		font-size: 0.78rem;
 		font-weight: 800;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
-	}
-
-	h2 {
-		max-width: 760px;
-		margin: 0;
-		font-size: clamp(2rem, 4vw, 3.6rem);
-		line-height: 1;
 	}
 
 	.content-grid {
@@ -92,15 +132,16 @@ const languages = [
 
 	.skills-panel,
 	.language-panel {
-		border: 1px solid rgba(23, 23, 23, 0.14);
+		border: 1px solid var(--color-border);
 		border-radius: 8px;
-		background: #fffaf2;
+		background: var(--color-bg-secondary);
 		padding: clamp(1.1rem, 2vw, 1.5rem);
-		box-shadow: 0 18px 45px rgba(50, 42, 34, 0.08);
+		box-shadow: 0 18px 45px rgba(var(--color-accent-rgb), 0.08);
 	}
 
 	h3 {
 		margin: 0 0 1.2rem;
+		color: var(--color-text);
 		font-size: clamp(1.25rem, 2vw, 1.65rem);
 	}
 
@@ -112,19 +153,35 @@ const languages = [
 	}
 
 	.skill-list {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.65rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+		gap: 0.85rem;
 	}
 
 	.skill-list li {
-		border: 1px solid rgba(23, 23, 23, 0.14);
-		border-radius: 999px;
-		background: #f4efe6;
-		padding: 0.58rem 0.82rem;
-		color: #3c3935;
-		font-size: 0.94rem;
-		font-weight: 800;
+		position: relative;
+		display: flex;
+		min-height: 118px;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+	}
+
+	.skill-list li:hover {
+		z-index: 2;
+	}
+
+	.skill-list img {
+		display: block;
+		width: min(92px, 100%);
+		height: 60px;
+		object-fit: contain;
+		transition: transform 0.2s ease;
+	}
+
+	.skill-list img:hover {
+		cursor: pointer;
+		transform: scale(1.3);
 	}
 
 	.language-list {
@@ -138,7 +195,7 @@ const languages = [
 		justify-content: space-between;
 		gap: 1rem;
 		padding: 0.95rem 0;
-		border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+		border-bottom: 1px solid var(--color-border);
 	}
 
 	.language-list li:first-child {
@@ -151,12 +208,12 @@ const languages = [
 	}
 
 	.language-list span {
-		color: #171717;
+		color: var(--color-text);
 		font-weight: 850;
 	}
 
 	.language-list strong {
-		color: #2f6f73;
+		color: var(--color-success);
 		font-size: 0.95rem;
 		text-align: right;
 	}
