@@ -1,0 +1,138 @@
+---
+import { defaultLocale, t, type Locale } from '../i18n';
+
+const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+
+const languageLinks = [
+	{
+		locale: "es",
+		href: "/",
+		flag: "fi-es",
+		label: t('spanish_language', locale),
+	},
+	{
+		locale: "en",
+		href: "/en/",
+		flag: "fi-gb",
+		label: t('english_language', locale),
+	},
+] as const;
+
+const currentLanguage = languageLinks.find((language) => language.locale === locale) ?? languageLinks[0];
+const nextLanguage = languageLinks.find((language) => language.locale !== locale) ?? languageLinks[0];
+
+const navLinks = [
+	{ href: "#skills", label: t('skills_link', locale) },
+	{ href: "#proyectos", label: t('projects_link', locale) },
+	{ href: "#cv", label: t('cv_link', locale) },
+	{ href: "#experiencia", label: t('experience_link', locale) },
+	{ href: "#estudios", label: t('education_link', locale) },
+	{ href: "#contacto", label: t('contact_link', locale) },
+] as const;
+---
+
+<header class="floating-header">
+	<a href="#inicio" class="header-brand">{t('personal_name', locale)}</a>
+	<div class="header-actions">
+		<nav class="header-nav" aria-label={t('main_navigation', locale)}>
+			{navLinks.map((link) => <a class="header-nav-link" href={link.href}>{link.label}</a>)}
+		</nav>
+		<a class="header-language" href={nextLanguage.href} aria-label={nextLanguage.label} title={nextLanguage.label}>
+			<span class={`fi ${currentLanguage.flag}`} aria-hidden="true"></span>
+		</a>
+	</div>
+</header>
+
+<style>
+	.floating-header {
+		--header-text: #d7e8ff;
+		--header-text-hover: #ffffff;
+		position: sticky;
+		top: 5px;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: fit-content;
+		max-width: calc(100% - 2rem);
+		margin: 13px auto 0;
+		gap: 1.2rem;
+		border: 1px solid var(--color-border);
+		border-radius: 999px;
+		background: rgba(11, 18, 32, 0.88);
+		padding: 0.65rem 0.75rem 0.65rem 1rem;
+		backdrop-filter: blur(18px);
+		box-shadow: 0 18px 45px rgba(0, 0, 0, 0.26);
+	}
+
+	.header-brand,
+	.header-brand:link,
+	.header-brand:visited,
+	.header-nav-link,
+	.header-nav-link:link,
+	.header-nav-link:visited {
+		color: var(--header-text) !important;
+		text-decoration: none;
+	}
+
+	.header-brand {
+		font-weight: 900;
+	}
+
+	.header-actions {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.header-nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.45rem 1rem;
+		font-size: 0.95rem;
+		font-weight: 700;
+	}
+
+	.header-brand:hover,
+	.header-nav-link:hover {
+		color: var(--header-text-hover) !important;
+	}
+
+	.header-language {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.2rem;
+		height: 1.65rem;
+		background: transparent;
+		cursor: pointer;
+		text-decoration: none;
+		transition: transform 0.2s ease;
+	}
+
+	.header-language:hover {
+		transform: translateY(-1px);
+	}
+
+	.fi {
+		width: 1.45rem;
+		border-radius: 2px;
+		box-shadow: none;
+	}
+
+	@media (max-width: 850px) {
+		.floating-header {
+			align-items: center;
+			flex-direction: column;
+			border-radius: 22px;
+			padding: 0.9rem;
+		}
+
+		.header-actions {
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+</style>
