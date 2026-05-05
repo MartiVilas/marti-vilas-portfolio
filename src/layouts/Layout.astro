@@ -1,5 +1,12 @@
+---
+import "flag-icons/css/flag-icons.min.css";
+import { defaultLocale, t, type Locale } from '../i18n';
+
+const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+---
+
 <!doctype html>
-<html lang="es">
+<html lang={locale}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -8,9 +15,9 @@
 		<meta name="generator" content={Astro.generator} />
 		<meta
 			name="description"
-			content="Portfolio personal de Marti Vilas: proyectos, experiencia, estudios y CV."
+			content={t('meta_description', locale)}
 		/>
-		<title>Marti Vilas | Portfolio</title>
+		<title>{t('page_title', locale)}</title>
 	</head>
 	<body>
 		<slot />

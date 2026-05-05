@@ -1,33 +1,14 @@
 ---
-const projects = [
-	{
-		title: "Dashboard de Portfolio",
-		type: "Frontend",
-		description:
-			"Interfaz responsive para presentar métricas, casos de estudio y enlaces clave con lectura rápida.",
-		tools: ["Astro", "CSS", "UX"],
-	},
-	{
-		title: "Gestor de Tareas",
-		type: "Producto",
-		description:
-			"Aplicación para organizar tareas, priorizar entregas y mantener un flujo de trabajo limpio.",
-		tools: ["JavaScript", "LocalStorage", "UI"],
-	},
-	{
-		title: "Landing Comercial",
-		type: "Web",
-		description:
-			"Página enfocada a conversión con bloques de valor, prueba social y llamadas a la acción claras.",
-		tools: ["HTML", "CSS", "SEO"],
-	},
-];
+import { defaultLocale, t, type Locale } from '../i18n';
+
+const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+const projects = t('projects', locale);
 ---
 
 <section class="projects" id="proyectos" aria-labelledby="projects-title">
 	<div class="section-heading">
-		<p class="eyebrow">Proyectos</p>
-		<h2 id="projects-title">Trabajo reciente</h2>
+		<p class="eyebrow">{t('projects_label', locale)}</p>
+		<h2 id="projects-title">{t('recent_work_title', locale)}</h2>
 	</div>
 	<div class="project-grid">
 		{
@@ -38,7 +19,7 @@ const projects = [
 						<h3>{project.title}</h3>
 						<p>{project.description}</p>
 					</div>
-					<ul aria-label={`Tecnologias de ${project.title}`}>
+					<ul aria-label={`${t('technologies_label', locale)} ${project.title}`}>
 						{project.tools.map((tool) => (
 							<li>{tool}</li>
 						))}

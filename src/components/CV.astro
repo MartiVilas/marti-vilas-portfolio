@@ -1,24 +1,20 @@
 ---
-const highlights = [
-	"Desarrollo frontend con HTML, CSS, JavaScript y Astro.",
-	"Maquetación responsive y componentes reutilizables.",
-	"Comunicación clara, organización y mentalidad de producto.",
-	"Interés por rendimiento, accesibilidad y buen diseño visual.",
-];
+import { defaultLocale, t, type Locale } from '../i18n';
+
+const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+const highlights = t('cv_highlights', locale);
 ---
 
 <section class="cv" id="cv" aria-labelledby="cv-title">
 	<div>
-		<p class="eyebrow">CV</p>
-		<h2 id="cv-title">Perfil profesional</h2>
-		<p class="intro">
-			Un resumen breve para entender rápidamente qué puedo aportar a un equipo o proyecto.
-		</p>
+		<p class="eyebrow">{t('cv_label', locale)}</p>
+		<h2 id="cv-title">{t('professional_profile_title', locale)}</h2>
+		<p class="intro">{t('cv_summary', locale)}</p>
 	</div>
 	<ul>
 		{highlights.map((item) => <li>{item}</li>)}
 	</ul>
-	<a href="mailto:hola@martivilas.dev" class="button">Contactar</a>
+	<a href="mailto:hola@martivilas.dev" class="button">{t('contact_button', locale)}</a>
 </section>
 
 <style>

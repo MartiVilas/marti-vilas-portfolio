@@ -1,0 +1,95 @@
+{
+	"meta_description": "Marti Vilas' personal portfolio: projects, experience, education, and CV.",
+	"page_title": "Marti Vilas | Portfolio",
+	"personal_name": "Marti Vilas",
+	"main_navigation": "Main navigation",
+	"skills_link": "Skills",
+	"projects_link": "Projects",
+	"cv_link": "CV",
+	"experience_link": "Experience",
+	"education_link": "Education",
+	"spanish_language": "Spanish",
+	"english_language": "English",
+	"language_selector": "Language selector",
+	"personal_portfolio": "Personal Portfolio",
+	"introduction_text": "Web developer focused on clean interfaces, useful products, and code that is not a pain to maintain.",
+	"projects_button": "View projects",
+	"cv_button": "Read CV",
+	"quick_summary": "Quick summary",
+	"availability_text": "Available for web projects, hiring, and collaborations.",
+	"technology_stack": "Frontend · React · TypeScript · UI",
+	"synopsis_label": "Synopsis",
+	"synopsis_title": "I build digital products with judgment, detail, and solid craft.",
+	"synopsis_text": "I am Marti Vilas, a developer focused on creating clear, fast, and polished web experiences. I like working close to the problem: understanding what the user needs, turning it into an interface, and leaving behind a maintainable technical base.",
+	"portfolio_summary": "This portfolio brings together projects, professional experience, education, and a short version of my CV so you can quickly understand how I work.",
+	"skills_label": "Skills",
+	"skills_title": "Skills & languages",
+	"projects_label": "Projects",
+	"recent_work_title": "Recent work",
+	"technologies_label": "Technologies for",
+	"projects": [
+		{
+			"title": "Portfolio Dashboard",
+			"type": "Frontend",
+			"description": "Responsive interface for presenting metrics, case studies, and key links with quick readability.",
+			"tools": ["Astro", "CSS", "UX"]
+		},
+		{
+			"title": "Task Manager",
+			"type": "Product",
+			"description": "Application for organizing tasks, prioritizing deliveries, and keeping a clean workflow.",
+			"tools": ["JavaScript", "LocalStorage", "UI"]
+		},
+		{
+			"title": "Commercial Landing Page",
+			"type": "Web",
+			"description": "Conversion-focused page with value sections, social proof, and clear calls to action.",
+			"tools": ["HTML", "CSS", "SEO"]
+		}
+	],
+	"cv_label": "CV",
+	"professional_profile_title": "Professional profile",
+	"cv_summary": "A brief summary to quickly understand what I can bring to a team or project.",
+	"contact_button": "Contact",
+	"cv_highlights": [
+		"Frontend development with HTML, CSS, JavaScript, and Astro.",
+		"Responsive layout and reusable components.",
+		"Clear communication, organization, and product-minded thinking.",
+		"Interest in performance, accessibility, and strong visual design."
+	],
+	"experience_label": "Experience",
+	"learning_by_doing_title": "Where I have learned by doing",
+	"experiences": [
+		{
+			"role": "Frontend Developer",
+			"place": "Personal and freelance projects",
+			"period": "2025 - Present",
+			"description": "Creation of responsive interfaces, landing pages, and web components focused on clarity, speed, and maintainability."
+		},
+		{
+			"role": "Technical support and web development",
+			"place": "Training environments",
+			"period": "2024 - 2025",
+			"description": "Incident resolution, technical documentation, and development of small tools to improve internal workflows."
+		}
+	],
+	"education_label": "Education",
+	"education_title": "Education",
+	"studies": [
+		{
+			"title": "Web Application Development",
+			"center": "Vocational training",
+			"period": "In progress"
+		},
+		{
+			"title": "UX/UI and accessibility fundamentals",
+			"center": "Self-directed learning and practice",
+			"period": "2024 - Present"
+		},
+		{
+			"title": "Technical English applied to development",
+			"center": "Resources and documentation",
+			"period": "Continuous"
+		}
+	]
+}

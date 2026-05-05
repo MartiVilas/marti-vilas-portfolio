@@ -1,27 +1,14 @@
 ---
-const studies = [
-	{
-		title: "Desarrollo de Aplicaciones Web",
-		center: "Formación profesional",
-		period: "En curso",
-	},
-	{
-		title: "Fundamentos de UX/UI y accesibilidad",
-		center: "Autoformación y práctica",
-		period: "2024 - Actualidad",
-	},
-	{
-		title: "Inglés técnico aplicado a desarrollo",
-		center: "Recursos y documentación",
-		period: "Continuo",
-	},
-];
+import { defaultLocale, t, type Locale } from '../i18n';
+
+const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+const studies = t('studies', locale);
 ---
 
 <section class="education" id="estudios" aria-labelledby="education-title">
 	<div class="section-heading">
-		<p class="eyebrow">Estudios</p>
-		<h2 id="education-title">Formación</h2>
+		<p class="eyebrow">{t('education_label', locale)}</p>
+		<h2 id="education-title">{t('education_title', locale)}</h2>
 	</div>
 	<div class="study-list">
 		{

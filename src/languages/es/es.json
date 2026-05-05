@@ -1,0 +1,95 @@
+{
+	"meta_description": "Portfolio personal de Marti Vilas: proyectos, experiencia, estudios y CV.",
+	"page_title": "Marti Vilas | Portfolio",
+	"personal_name": "Marti Vilas",
+	"main_navigation": "Navegación principal",
+	"skills_link": "Skills",
+	"projects_link": "Proyectos",
+	"cv_link": "CV",
+	"experience_link": "Experiencia",
+	"education_link": "Estudios",
+	"spanish_language": "Español",
+	"english_language": "Inglés",
+	"language_selector": "Selector de idioma",
+	"personal_portfolio": "Portfolio Personal",
+	"introduction_text": "Desarrollador web con foco en interfaces limpias, productos útiles y código que no da pereza mantener.",
+	"projects_button": "Ver proyectos",
+	"cv_button": "Leer CV",
+	"quick_summary": "Resumen rápido",
+	"availability_text": "Disponible para proyectos web, contrataciones y colaboraciones.",
+	"technology_stack": "Frontend · React · TypeScript · UI",
+	"synopsis_label": "Sinopsis",
+	"synopsis_title": "Construyo productos digitales con criterio, detalle y mucho oficio.",
+	"synopsis_text": "Soy Marti Vilas, desarrollador enfocado en crear experiencias web claras, rápidas y cuidadas. Me gusta trabajar cerca del problema: entender lo que necesita el usuario, convertirlo en interfaz y dejar una base técnica mantenible.",
+	"portfolio_summary": "Este portfolio reúne proyectos, recorrido profesional, formación y una versión breve de mi CV para que puedas conocer cómo trabajo de un vistazo.",
+	"skills_label": "Skills",
+	"skills_title": "Skills & languages",
+	"projects_label": "Proyectos",
+	"recent_work_title": "Trabajo reciente",
+	"technologies_label": "Tecnologías de",
+	"projects": [
+		{
+			"title": "Dashboard de Portfolio",
+			"type": "Frontend",
+			"description": "Interfaz responsive para presentar métricas, casos de estudio y enlaces clave con lectura rápida.",
+			"tools": ["Astro", "CSS", "UX"]
+		},
+		{
+			"title": "Gestor de Tareas",
+			"type": "Producto",
+			"description": "Aplicación para organizar tareas, priorizar entregas y mantener un flujo de trabajo limpio.",
+			"tools": ["JavaScript", "LocalStorage", "UI"]
+		},
+		{
+			"title": "Landing Comercial",
+			"type": "Web",
+			"description": "Página enfocada a conversión con bloques de valor, prueba social y llamadas a la acción claras.",
+			"tools": ["HTML", "CSS", "SEO"]
+		}
+	],
+	"cv_label": "CV",
+	"professional_profile_title": "Perfil profesional",
+	"cv_summary": "Un resumen breve para entender rápidamente qué puedo aportar a un equipo o proyecto.",
+	"contact_button": "Contactar",
+	"cv_highlights": [
+		"Desarrollo frontend con HTML, CSS, JavaScript y Astro.",
+		"Maquetación responsive y componentes reutilizables.",
+		"Comunicación clara, organización y mentalidad de producto.",
+		"Interés por rendimiento, accesibilidad y buen diseño visual."
+	],
+	"experience_label": "Experiencia",
+	"learning_by_doing_title": "Dónde he aprendido haciendo",
+	"experiences": [
+		{
+			"role": "Desarrollador Frontend",
+			"place": "Proyectos personales y freelance",
+			"period": "2025 - Actualidad",
+			"description": "Creación de interfaces responsive, landings y componentes web enfocados en claridad, velocidad y mantenimiento."
+		},
+		{
+			"role": "Soporte técnico y desarrollo web",
+			"place": "Entornos formativos",
+			"period": "2024 - 2025",
+			"description": "Resolución de incidencias, documentación técnica y desarrollo de pequeñas herramientas para mejorar flujos internos."
+		}
+	],
+	"education_label": "Estudios",
+	"education_title": "Formación",
+	"studies": [
+		{
+			"title": "Desarrollo de Aplicaciones Web",
+			"center": "Formación profesional",
+			"period": "En curso"
+		},
+		{
+			"title": "Fundamentos de UX/UI y accesibilidad",
+			"center": "Autoformación y práctica",
+			"period": "2024 - Actualidad"
+		},
+		{
+			"title": "Inglés técnico aplicado a desarrollo",
+			"center": "Recursos y documentación",
+			"period": "Continuo"
+		}
+	]
+}

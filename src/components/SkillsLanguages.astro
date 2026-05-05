@@ -1,4 +1,8 @@
 ---
+import { defaultLocale, t, type Locale } from '../i18n';
+
+const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+
 const frameworksAndLanguages = [
 	{
 		name: "PHP",
@@ -53,29 +57,14 @@ const frameworksAndLanguages = [
 		img: "https://cdn.simpleicons.org/astro/FF5A03",
 	},
 ];
-
-const languages = [
-	{
-		name: "Español",
-		level: "Nativo",
-	},
-	{
-		name: "Català",
-		level: "Natiu",
-	},
-	{
-		name: "Inglés",
-		level: "B2.2",
-	},
-];
 ---
 
-<section class="skills-languages" id="skills" aria-label="Skills">
+<section class="skills-languages" id="skills" aria-label={t('skills_label', locale)}>
 	<div class="section-heading">
-		<p class="eyebrow">Skills & languages</p>
+		<p class="eyebrow">{t('skills_title', locale)}</p>
 	</div>
 
-	<div class="carousel" aria-label="Skills">
+	<div class="carousel" aria-label={t('skills_label', locale)}>
 		<div class="carousel-track" role="list">
 			{
 				[...frameworksAndLanguages, ...frameworksAndLanguages].map((skill, index) => (

@@ -1,18 +1,17 @@
+---
+import { defaultLocale, t, type Locale } from '../i18n';
+
+const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+---
+
 <section class="synopsis" id="sinopsis" aria-labelledby="synopsis-title">
 	<div class="section-copy">
-		<p class="eyebrow">Sinopsis</p>
-		<h2 id="synopsis-title">Construyo productos digitales con criterio, detalle y mucho oficio.</h2>
+		<p class="eyebrow">{t('synopsis_label', locale)}</p>
+		<h2 id="synopsis-title">{t('synopsis_title', locale)}</h2>
 	</div>
 	<div class="text-stack">
-		<p>
-			Soy Marti Vilas, desarrollador enfocado en crear experiencias web claras, rápidas y
-			cuidadas. Me gusta trabajar cerca del problema: entender lo que necesita el usuario,
-			convertirlo en interfaz y dejar una base técnica mantenible.
-		</p>
-		<p>
-			Este portfolio reúne proyectos, recorrido profesional, formación y una versión breve de mi
-			CV para que puedas conocer cómo trabajo de un vistazo.
-		</p>
+		<p>{t('synopsis_text', locale)}</p>
+		<p>{t('portfolio_summary', locale)}</p>
 	</div>
 </section>
 

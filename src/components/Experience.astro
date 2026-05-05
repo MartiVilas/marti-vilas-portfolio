@@ -1,25 +1,13 @@
 ---
-const experiences = [
-	{
-		role: "Desarrollador Frontend",
-		place: "Proyectos personales y freelance",
-		period: "2025 - Actualidad",
-		description:
-			"Creación de interfaces responsive, landings y componentes web enfocados en claridad, velocidad y mantenimiento.",
-	},
-	{
-		role: "Soporte técnico y desarrollo web",
-		place: "Entornos formativos",
-		period: "2024 - 2025",
-		description:
-			"Resolución de incidencias, documentación técnica y desarrollo de pequeñas herramientas para mejorar flujos internos.",
-	},
-];
+import { defaultLocale, t, type Locale } from '../i18n';
+
+const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+const experiences = t('experiences', locale);
 ---
 
 <section class="timeline-section" id="experiencia" aria-labelledby="experience-title">
-	<p class="eyebrow">Experiencia</p>
-	<h2 id="experience-title">Dónde he aprendido haciendo</h2>
+	<p class="eyebrow">{t('experience_label', locale)}</p>
+	<h2 id="experience-title">{t('learning_by_doing_title', locale)}</h2>
 	<div class="timeline">
 		{
 			experiences.map((experience) => (

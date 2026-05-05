@@ -1,7 +1,7 @@
 {
   "name": "marti-vilas-portfolio",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "astro": "^6.2.2",
+    "flag-icons": "^7.5.0",
+    "i18n": "^0.15.3",
     "prettier": "^3.8.3"
   }
 }
