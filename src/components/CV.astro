@@ -1,4 +1,5 @@
 ---
+import cvFile from '../assets/MARTI_VILAS_CV_2025.pdf';
 import { defaultLocale, t, type Locale } from '../i18n';
 
 const { locale = defaultLocale } = Astro.props as { locale?: Locale };
@@ -14,7 +15,10 @@ const highlights = t('cv_highlights', locale);
 	<ul>
 		{highlights.map((item) => <li>{item}</li>)}
 	</ul>
-	<a href="mailto:hola@martivilas.dev" class="button">{t('contact_button', locale)}</a>
+	<div class="actions">
+		<a href={cvFile} class="button" download="Marti_Vilas_CV.pdf">{t('download_cv_button', locale)}</a>
+		<a href="mailto:hola@martivilas.dev" class="button secondary">{t('contact_button', locale)}</a>
+	</div>
 </section>
 
 <style>
@@ -76,6 +80,13 @@ const highlights = t('cv_highlights', locale);
 		content: "";
 	}
 
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		justify-content: end;
+	}
+
 	.button {
 		display: inline-flex;
 		min-width: 124px;
@@ -92,10 +103,24 @@ const highlights = t('cv_highlights', locale);
 		background: var(--color-primary-hover);
 	}
 
+	.button.secondary {
+		border: 1px solid var(--color-accent);
+		background: transparent;
+		color: var(--color-accent);
+	}
+
+	.button.secondary:hover {
+		background: rgba(var(--color-accent-rgb), 0.12);
+	}
+
 	@media (max-width: 920px) {
 		.cv {
 			grid-template-columns: 1fr;
 			align-items: start;
+		}
+
+		.actions {
+			justify-content: start;
 		}
 
 		.button {

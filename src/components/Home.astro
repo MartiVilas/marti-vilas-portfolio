@@ -1,5 +1,6 @@
 ---
 import CV from './CV.astro';
+import ContactForm from './ContactForm.astro';
 import Education from './Education.astro';
 import Experience from './Experience.astro';
 import Layout from '../layouts/Layout.astro';
@@ -37,6 +38,7 @@ const nextLanguage = languageLinks.find((language) => language.locale !== locale
 				<a href="#skills">{t('skills_link', locale)}</a>
 				<a href="#proyectos">{t('projects_link', locale)}</a>
 				<a href="#cv">{t('cv_link', locale)}</a>
+				<a href="#contacto">{t('contact_link', locale)}</a>
 				<a href="#experiencia">{t('experience_link', locale)}</a>
 				<a href="#estudios">{t('education_link', locale)}</a>
 			</nav>
@@ -70,6 +72,7 @@ const nextLanguage = languageLinks.find((language) => language.locale !== locale
 			<CV locale={locale} />
 			<Experience locale={locale} />
 			<Education locale={locale} />
+			<ContactForm locale={locale} />
 		</div>
 	</main>
 </Layout>
@@ -77,16 +80,21 @@ const nextLanguage = languageLinks.find((language) => language.locale !== locale
 <style>
 	.site-header {
 		position: sticky;
-		top: 0;
+		top: 5px;
 		z-index: 10;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		gap: 1.5rem;
-		padding: 1rem clamp(1rem, 4vw, 3rem);
-		border-bottom: 1px solid var(--color-border);
-		background: rgba(11, 18, 32, 0.86);
+		justify-content: center;
+		width: fit-content;
+		max-width: calc(100% - 2rem);
+		margin: 13px auto 0;
+		gap: 1.2rem;
+		border: 1px solid var(--color-border);
+		border-radius: 999px;
+		background: rgba(11, 18, 32, 0.88);
+		padding: 0.65rem 0.75rem 0.65rem 1rem;
 		backdrop-filter: blur(18px);
+		box-shadow: 0 18px 45px rgba(0, 0, 0, 0.26);
 	}
 
 	.brand {
@@ -97,14 +105,14 @@ const nextLanguage = languageLinks.find((language) => language.locale !== locale
 	.header-actions {
 		display: flex;
 		align-items: center;
-		justify-content: end;
+		justify-content: center;
 		gap: 1rem;
 	}
 
 	nav {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: end;
+		justify-content: center;
 		gap: 0.45rem 1rem;
 		color: var(--color-text-muted);
 		font-size: 0.95rem;
@@ -121,8 +129,6 @@ const nextLanguage = languageLinks.find((language) => language.locale !== locale
 		justify-content: center;
 		width: 2.8rem;
 		height: 2.35rem;
-		border: 1px solid var(--color-border);
-		border-radius: 8px;
 		background: rgba(15, 23, 42, 0.8);
 		cursor: pointer;
 		text-decoration: none;
@@ -248,18 +254,20 @@ const nextLanguage = languageLinks.find((language) => language.locale !== locale
 
 	@media (max-width: 850px) {
 		.site-header {
-			position: static;
-			align-items: start;
+			position: sticky;
+			align-items: center;
 			flex-direction: column;
+			border-radius: 22px;
+			padding: 0.9rem;
 		}
 
 		.header-actions {
-			align-items: start;
+			align-items: center;
 			flex-direction: column;
 		}
 
 		nav {
-			justify-content: start;
+			justify-content: center;
 		}
 
 		.hero {
