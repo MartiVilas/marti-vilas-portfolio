@@ -3,6 +3,7 @@
 	"page_title": "Marti Vilas | Portfolio",
 	"personal_name": "Marti Vilas",
 	"main_navigation": "Navegación principal",
+	"home_link": "Inicio",
 	"skills_link": "Skills",
 	"projects_link": "Proyectos",
 	"cv_link": "CV",
@@ -25,6 +26,12 @@
 	"portfolio_summary": "Este portfolio reúne proyectos, recorrido profesional, formación y una versión breve de mi CV para que puedas conocer cómo trabajo de un vistazo.",
 	"skills_label": "Skills",
 	"skills_title": "Skills & languages",
+	"spoken_languages_label": "Idiomas",
+	"spoken_languages": [
+		{ "name": "Catalán", "level": "Nativo", "flag": "fi-es-ct" },
+		{ "name": "Castellano", "level": "Nativo", "flag": "fi-es" },
+		{ "name": "Inglés", "level": "B2.2", "flag": "fi-gb" }
+	],
 	"projects_label": "Proyectos",
 	"recent_work_title": "Trabajo reciente",
 	"technologies_label": "Tecnologías de",
@@ -50,14 +57,14 @@
 	],
 	"cv_label": "CV",
 	"professional_profile_title": "Perfil profesional",
-	"cv_summary": "Un resumen breve para entender rápidamente qué puedo aportar a un equipo o proyecto.",
+	"cv_summary": "Web Developer Trainee y estudiante de CFGS DAW en Barcelona. Frontend con React.js y TypeScript en proyectos reales, con experiencia aplicando metodologías SCRUM y Agile.",
 	"contact_button": "Contactar",
 	"download_cv_button": "Descargar CV",
 	"cv_highlights": [
-		"Desarrollo frontend con HTML, CSS, JavaScript y Astro.",
-		"Maquetación responsive y componentes reutilizables.",
-		"Comunicación clara, organización y mentalidad de producto.",
-		"Interés por rendimiento, accesibilidad y buen diseño visual."
+		"Frontend con React.js, TypeScript, Vue.js (Quasar) y Astro.",
+		"Gestión de estado con Zustand y backend en Node.js + TypeScript.",
+		"Maquetación responsive y desarrollo de aplicaciones web adaptables.",
+		"Metodologías SCRUM/Agile: sprints, dailies y revisión de código."
 	],
 	"contact_label": "Contacto",
 	"contact_title": "Hablemos de tu próximo proyecto",
@@ -77,35 +84,45 @@
 	"learning_by_doing_title": "Dónde he aprendido haciendo",
 	"experiences": [
 		{
-			"role": "Desarrollador Frontend",
-			"place": "Proyectos personales y freelance",
-			"period": "2025 - Actualidad",
-			"description": "Creación de interfaces responsive, landings y componentes web enfocados en claridad, velocidad y mantenimiento."
+			"role": "Web Developer Trainee",
+			"place": "I-MAS",
+			"period": "Sep 2025 - Actualidad",
+			"description": "Desarrollo frontend con React.js y TypeScript en proyectos reales. Gestión del estado global con Zustand y backend con Node.js + TypeScript. Despliegue de landings en WordPress y aplicación de metodologías SCRUM/Agile. Adopción de IA generativa como complemento al flujo de trabajo, con criterio y validación propios."
 		},
 		{
-			"role": "Soporte técnico y desarrollo web",
-			"place": "Entornos formativos",
-			"period": "2024 - 2025",
-			"description": "Resolución de incidencias, documentación técnica y desarrollo de pequeñas herramientas para mejorar flujos internos."
+			"role": "Vendedor Textil",
+			"place": "IKEA (Sabadell)",
+			"period": "Jun-Sep 2024 / Jun-Sep 2025",
+			"description": "Atención al cliente, resolución de dudas y gestión de stock en sección."
+		},
+		{
+			"role": "Mozo de Almacén",
+			"place": "Mango / Punto Fa S.L. (Lliçà d'Amunt)",
+			"period": "Ago 2021 - Ago 2023",
+			"description": "Empaquetamiento, distribución de prendas y organización de almacén."
+		},
+		{
+			"role": "Monitor / Dinamizador Deportivo",
+			"place": "Escola Sant Gervasi (Mollet del Vallès)",
+			"period": "Sep 2019 - 2022",
+			"description": "Monitor de baloncesto extraescolar para alumnos de 9-11 años."
 		}
 	],
 	"education_label": "Estudios",
 	"education_title": "Formación",
 	"studies": [
 		{
-			"title": "Desarrollo de Aplicaciones Web",
-			"center": "Formación profesional",
-			"period": "En curso"
+			"title": "CFGS Desarrollo de Aplicaciones Web (DAW)",
+			"center": "Institut Tecnològic de Barcelona",
+			"period": "Sep 2023 - May 2026",
+			"description": "Formación oficial centrada en desarrollo frontend y backend, bases de datos, despliegue y metodologías ágiles. Núcleo de mi perfil técnico actual.",
+			"badge": "Finalizado",
+			"featured": true
 		},
 		{
-			"title": "Fundamentos de UX/UI y accesibilidad",
-			"center": "Autoformación y práctica",
-			"period": "2024 - Actualidad"
-		},
-		{
-			"title": "Inglés técnico aplicado a desarrollo",
-			"center": "Recursos y documentación",
-			"period": "Continuo"
+			"title": "Bachillerato - Rama Social-Económica",
+			"center": "I.E.S Rovira-Forns / Escola Sant Gervasi",
+			"period": "Sep 2019 - Jun 2022"
 		}
 	]
 }

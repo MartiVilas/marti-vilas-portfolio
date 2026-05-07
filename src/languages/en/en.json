@@ -3,6 +3,7 @@
 	"page_title": "Marti Vilas | Portfolio",
 	"personal_name": "Marti Vilas",
 	"main_navigation": "Main navigation",
+	"home_link": "Home",
 	"skills_link": "Skills",
 	"projects_link": "Projects",
 	"cv_link": "CV",
@@ -25,6 +26,12 @@
 	"portfolio_summary": "This portfolio brings together projects, professional experience, education, and a short version of my CV so you can quickly understand how I work.",
 	"skills_label": "Skills",
 	"skills_title": "Skills & languages",
+	"spoken_languages_label": "Languages",
+	"spoken_languages": [
+		{ "name": "Catalan", "level": "Native", "flag": "fi-es-ct" },
+		{ "name": "Spanish", "level": "Native", "flag": "fi-es" },
+		{ "name": "English", "level": "B2.2", "flag": "fi-gb" }
+	],
 	"projects_label": "Projects",
 	"recent_work_title": "Recent work",
 	"technologies_label": "Technologies for",
@@ -50,14 +57,14 @@
 	],
 	"cv_label": "CV",
 	"professional_profile_title": "Professional profile",
-	"cv_summary": "A brief summary to quickly understand what I can bring to a team or project.",
+	"cv_summary": "Web Developer Trainee and Web Application Development (DAW) student based in Barcelona. Frontend development with React.js and TypeScript on real-world projects, with experience applying SCRUM and Agile methodologies.",
 	"contact_button": "Contact",
 	"download_cv_button": "Download CV",
 	"cv_highlights": [
-		"Frontend development with HTML, CSS, JavaScript, and Astro.",
-		"Responsive layout and reusable components.",
-		"Clear communication, organization, and product-minded thinking.",
-		"Interest in performance, accessibility, and strong visual design."
+		"Frontend with React.js, TypeScript, Vue.js (Quasar), and Astro.",
+		"State management with Zustand and backend with Node.js + TypeScript.",
+		"Responsive layout and adaptive web application development.",
+		"SCRUM/Agile methodologies: sprints, dailies, and code review."
 	],
 	"contact_label": "Contact",
 	"contact_title": "Let's talk about your next project",
@@ -77,35 +84,45 @@
 	"learning_by_doing_title": "Where I have learned by doing",
 	"experiences": [
 		{
-			"role": "Frontend Developer",
-			"place": "Personal and freelance projects",
-			"period": "2025 - Present",
-			"description": "Creation of responsive interfaces, landing pages, and web components focused on clarity, speed, and maintainability."
+			"role": "Web Developer Trainee",
+			"place": "I-MAS",
+			"period": "Sep 2025 - Present",
+			"description": "Frontend development with React.js and TypeScript on real-world projects. Global state management with Zustand and backend with Node.js + TypeScript. Landing page deployment on WordPress and SCRUM/Agile methodologies. Adoption of generative AI as a complement to my workflow, applied with judgment and personal validation."
 		},
 		{
-			"role": "Technical support and web development",
-			"place": "Training environments",
-			"period": "2024 - 2025",
-			"description": "Incident resolution, technical documentation, and development of small tools to improve internal workflows."
+			"role": "Textile Sales Associate",
+			"place": "IKEA (Sabadell)",
+			"period": "Jun-Sep 2024 / Jun-Sep 2025",
+			"description": "Customer service, query handling, and stock management within the section."
+		},
+		{
+			"role": "Warehouse Operative",
+			"place": "Mango / Punto Fa S.L. (Lliçà d'Amunt)",
+			"period": "Aug 2021 - Aug 2023",
+			"description": "Packaging, garment distribution, and warehouse organization."
+		},
+		{
+			"role": "Sports Coach / Activity Leader",
+			"place": "Escola Sant Gervasi (Mollet del Vallès)",
+			"period": "Sep 2019 - 2022",
+			"description": "Extracurricular basketball coach for students aged 9 to 11."
 		}
 	],
 	"education_label": "Education",
 	"education_title": "Education",
 	"studies": [
 		{
-			"title": "Web Application Development",
-			"center": "Vocational training",
-			"period": "In progress"
+			"title": "Higher VET in Web Application Development (DAW)",
+			"center": "Institut Tecnològic de Barcelona",
+			"period": "Sep 2023 - May 2026",
+			"description": "Official program covering frontend and backend development, databases, deployment, and agile methodologies. The core of my current technical profile.",
+			"badge": "Completed",
+			"featured": true
 		},
 		{
-			"title": "UX/UI and accessibility fundamentals",
-			"center": "Self-directed learning and practice",
-			"period": "2024 - Present"
-		},
-		{
-			"title": "Technical English applied to development",
-			"center": "Resources and documentation",
-			"period": "Continuous"
+			"title": "Spanish Baccalaureate - Social Sciences & Economics",
+			"center": "I.E.S Rovira-Forns / Escola Sant Gervasi",
+			"period": "Sep 2019 - Jun 2022"
 		}
 	]
 }

@@ -2,6 +2,7 @@
 import { defaultLocale, t, type Locale } from '../i18n';
 
 const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+const spokenLanguages = t('spoken_languages', locale);
 
 const frameworksAndLanguages = [
 	{
@@ -75,6 +76,18 @@ const frameworksAndLanguages = [
 			}
 		</div>
 	</div>
+
+	<ul class="spoken-languages" aria-label={t('spoken_languages_label', locale)}>
+		{
+			spokenLanguages.map((language) => (
+				<li class="spoken-language">
+					<span class={`fi ${language.flag}`} aria-hidden="true"></span>
+					<span class="spoken-language-name">{language.name}</span>
+					<span class="spoken-language-level">{language.level}</span>
+				</li>
+			))
+		}
+	</ul>
 </section>
 
 <style>
@@ -125,7 +138,7 @@ const frameworksAndLanguages = [
 		display: flex;
 		gap: var(--gap);
 		width: max-content;
-		animation: skills-scroll 32s linear infinite;
+		animation: skills-scroll 18s linear infinite;
 	}
 
 	.carousel-item {
@@ -173,6 +186,54 @@ const frameworksAndLanguages = [
 
 		.carousel-item img {
 			height: 48px;
+		}
+	}
+
+	.spoken-languages {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.85rem;
+		margin: 1.6rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.spoken-language {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6rem;
+		border: 1px solid var(--color-border);
+		border-radius: 999px;
+		background: var(--color-bg-secondary);
+		padding: 0.5rem 1rem;
+		color: var(--color-text);
+		font-size: 0.95rem;
+		font-weight: 700;
+	}
+
+	.spoken-language .fi {
+		width: 1.3rem;
+		border-radius: 2px;
+	}
+
+	.spoken-language-name {
+		color: var(--color-text);
+	}
+
+	.spoken-language-level {
+		color: var(--color-success);
+		font-weight: 800;
+	}
+
+	@media (max-width: 520px) {
+		.spoken-languages {
+			gap: 0.6rem;
+		}
+
+		.spoken-language {
+			padding: 0.45rem 0.85rem;
+			font-size: 0.88rem;
 		}
 	}
 </style>

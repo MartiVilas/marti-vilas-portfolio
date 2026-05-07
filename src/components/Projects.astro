@@ -38,9 +38,10 @@ const projects = t('projects', locale);
 
 	.section-heading {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: end;
 		justify-content: space-between;
-		gap: 2rem;
+		gap: 1rem 2rem;
 		margin-bottom: 2rem;
 	}
 
@@ -122,11 +123,21 @@ const projects = t('projects', locale);
 
 	@media (max-width: 920px) {
 		.project-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.project-card {
+			min-height: 280px;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.project-grid {
 			grid-template-columns: 1fr;
 		}
 
 		.project-card {
-			min-height: 260px;
+			min-height: 240px;
 		}
 	}
 </style>

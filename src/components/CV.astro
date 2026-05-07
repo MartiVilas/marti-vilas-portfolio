@@ -127,4 +127,16 @@ const highlights = t('cv_highlights', locale);
 			width: fit-content;
 		}
 	}
+
+	@media (max-width: 480px) {
+		.actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.button {
+			width: 100%;
+			min-width: 0;
+		}
+	}
 </style>

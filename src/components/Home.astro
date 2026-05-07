@@ -75,9 +75,10 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 	h1 {
 		margin: 0;
 		color: var(--color-text);
-		font-size: clamp(4.2rem, 13vw, 11rem);
-		line-height: 0.82;
+		font-size: clamp(2.6rem, 11vw, 11rem);
+		line-height: 0.86;
 		font-weight: 950;
+		word-break: break-word;
 	}
 
 	.hero-copy > p:not(.eyebrow) {
@@ -154,6 +155,24 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 			grid-template-columns: 1fr;
 			align-items: start;
 			padding-top: 5rem;
+		}
+
+		.hero-actions a {
+			flex: 1 1 auto;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero {
+			padding-top: 4rem;
+		}
+
+		.hero-copy > p:not(.eyebrow) {
+			font-size: 1.05rem;
+		}
+
+		.hero-panel p {
+			font-size: 1.05rem;
 		}
 	}
 </style>

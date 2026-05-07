@@ -153,7 +153,7 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 
 	input,
 	textarea {
-		width: 95%;
+		width: 100%;
 		border: 1px solid var(--color-border);
 		border-radius: 8px;
 		background: var(--color-bg-tertiary);
@@ -163,8 +163,8 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 		outline: none;
 	}
 
-	input {
-		height: 1.75rem;
+	input:not([type="checkbox"]) {
+		height: 2.65rem;
 	}
 
 	input:focus,
@@ -189,9 +189,11 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 	}
 
 	.consent input {
+		flex: 0 0 auto;
 		width: 1rem;
 		height: 1rem;
 		margin-top: 0.15rem;
+		padding: 0;
 		accent-color: var(--color-primary);
 	}
 
@@ -237,6 +239,7 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 	@media (max-width: 860px) {
 		.contact {
 			grid-template-columns: 1fr;
+			align-items: start;
 		}
 
 		.contact-form {
@@ -246,8 +249,12 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 		}
 
 		.form-footer {
-			align-items: start;
+			align-items: stretch;
 			flex-direction: column;
+		}
+
+		.form-footer button {
+			width: 100%;
 		}
 	}
 </style>
