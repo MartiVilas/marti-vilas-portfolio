@@ -5,6 +5,7 @@ import Education from './Education.astro';
 import Experience from './Experience.astro';
 import Header from './Header.astro';
 import Layout from '../layouts/Layout.astro';
+import PortfolioChat from './PortfolioChat.astro';
 import Projects from './Projects.astro';
 import SkillsLanguages from './SkillsLanguages.astro';
 import Synopsis from './Synopsis.astro';
@@ -43,6 +44,8 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 			<ContactForm locale={locale} />
 		</div>
 	</main>
+
+	<PortfolioChat locale={locale} />
 </Layout>
 
 <style>

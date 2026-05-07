@@ -1,0 +1,406 @@
+---
+import { defaultQuestions } from '../data/chatbot-profile'
+import { defaultLocale, type Locale } from '../i18n'
+
+const { locale = defaultLocale } = Astro.props as { locale?: Locale }
+const questions = defaultQuestions[locale]
+const labels =
+	locale === 'en'
+		? {
+				title: 'MartiMate',
+				subtitle: 'CV, stack, experience and availability',
+				open: 'Open MartiMate',
+				close: 'Close MartiMate',
+				placeholder: 'Write your question...',
+				send: 'Send',
+				initial: 'Hi, I am MartiMate. Ask me about Marti, his experience, stack or availability.',
+				loading: 'Thinking...',
+				error: 'I could not answer right now. Please try again later.',
+			}
+		: {
+				title: 'MartiMate',
+				subtitle: 'CV, stack, experiencia y disponibilidad',
+				open: 'Abrir MartiMate',
+				close: 'Cerrar MartiMate',
+				placeholder: 'Escribe tu pregunta...',
+				send: 'Enviar',
+				initial: 'Hola, soy MartiMate. Preguntame por Marti, su experiencia, stack o disponibilidad.',
+				loading: 'Pensando...',
+				error: 'No he podido responder ahora mismo. Intentalo mas tarde.',
+			}
+---
+
+<section
+	class="portfolio-chat"
+	data-portfolio-chat
+	data-locale={locale}
+	data-error={labels.error}
+	data-loading={labels.loading}
+>
+	<button class="chat-toggle" type="button" data-chat-action="toggle" aria-label={labels.open} aria-expanded="false">
+		<span aria-hidden="true">MM</span>
+	</button>
+
+	<div class="chat-window" role="dialog" aria-modal="false" aria-labelledby="portfolio-chat-title">
+		<header class="chat-header">
+			<div>
+				<h2 id="portfolio-chat-title">{labels.title}</h2>
+				<p>{labels.subtitle}</p>
+			</div>
+			<button class="chat-close" type="button" data-chat-action="close" aria-label={labels.close}>
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</header>
+
+		<div class="chat-messages" data-chat-messages aria-live="polite">
+			<div class="chat-row assistant">
+				<img class="chat-avatar" src="/Logo-marti.jpeg" alt="" loading="lazy" />
+				<div class="chat-message assistant">
+					<span class="chat-message-text">{labels.initial}</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="quick-questions" aria-label={labels.subtitle}>
+			{questions.map((question) => <button type="button" data-chat-question={question.prompt}>{question.label}</button>)}
+		</div>
+
+		<form class="chat-form" data-chat-form>
+			<input name="message" type="text" autocomplete="off" maxlength="700" placeholder={labels.placeholder} />
+			<button type="submit">{labels.send}</button>
+		</form>
+	</div>
+</section>
+
+<script>
+	type ChatRole = 'user' | 'assistant'
+	type ChatHistoryItem = {
+		role: ChatRole
+		content: string
+	}
+
+	function initPortfolioChat(root: HTMLElement) {
+		const toggle = root.querySelector<HTMLButtonElement>('[data-chat-action="toggle"]')
+		const messages = root.querySelector<HTMLElement>('[data-chat-messages]')
+		const form = root.querySelector<HTMLFormElement>('[data-chat-form]')
+		const input = form?.querySelector<HTMLInputElement>('input[name="message"]')
+		const locale = root.dataset.locale ?? 'es'
+		const errorMessage = root.dataset.error ?? 'No he podido responder ahora mismo.'
+		const loadingMessage = root.dataset.loading ?? '...'
+		const history: ChatHistoryItem[] = []
+
+		if (!toggle || !messages || !form || !input) return
+
+		function setOpen(isOpen: boolean) {
+			root.classList.toggle('is-open', isOpen)
+			toggle?.setAttribute('aria-expanded', String(isOpen))
+			if (isOpen) window.setTimeout(() => input?.focus(), 0)
+		}
+
+		function cleanAnswer(content: string) {
+			return content
+				.replace(/\*\*(.*?)\*\*/g, '$1')
+				.replace(/\*(.*?)\*/g, '$1')
+				.replace(/`(.*?)`/g, '$1')
+				.trim()
+		}
+
+		function addMessage(role: ChatRole | 'assistant loading', content: string) {
+			const row = document.createElement('div')
+			const normalizedRole = role === 'user' ? 'user' : 'assistant'
+			row.className = `chat-row ${normalizedRole}`
+
+			if (normalizedRole === 'assistant') {
+				const avatar = document.createElement('img')
+				avatar.className = 'chat-avatar'
+				avatar.src = '/Logo-marti.jpeg'
+				avatar.alt = ''
+				row.appendChild(avatar)
+			}
+
+			const bubble = document.createElement('div')
+			bubble.className = `chat-message ${role}`
+			const text = document.createElement('span')
+			text.className = 'chat-message-text'
+			text.textContent = content
+			bubble.appendChild(text)
+			row.appendChild(bubble)
+
+			messages?.appendChild(row)
+			if (messages) messages.scrollTop = messages.scrollHeight
+			return bubble
+		}
+
+		async function sendMessage(rawMessage: string) {
+			const message = rawMessage.trim()
+			if (!message || form?.classList.contains('is-sending')) return
+
+			addMessage('user', message)
+			history.push({ role: 'user', content: message })
+			input!.value = ''
+
+			const loadingBubble = addMessage('assistant loading', loadingMessage)
+			form?.classList.add('is-sending')
+
+			try {
+				const response = await fetch('/api/chat', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						message,
+						messages: history.slice(0, -1),
+						locale,
+					}),
+				})
+				const data = await response.json()
+				const answer = response.ok && data.answer ? cleanAnswer(String(data.answer)) : errorMessage
+
+				loadingBubble.className = 'chat-message assistant'
+				const text = loadingBubble.querySelector<HTMLElement>('.chat-message-text')
+				if (text) text.textContent = answer
+				history.push({ role: 'assistant', content: answer })
+			} catch {
+				loadingBubble.className = 'chat-message assistant'
+				const text = loadingBubble.querySelector<HTMLElement>('.chat-message-text')
+				if (text) text.textContent = errorMessage
+			} finally {
+				form?.classList.remove('is-sending')
+			}
+		}
+
+		root.addEventListener('click', (event) => {
+			const target = event.target
+			if (!(target instanceof Element)) return
+
+			const actionButton = target.closest<HTMLButtonElement>('[data-chat-action]')
+			if (actionButton) {
+				const action = actionButton.dataset.chatAction
+				if (action === 'toggle') setOpen(!root.classList.contains('is-open'))
+				if (action === 'close') setOpen(false)
+				return
+			}
+
+			const questionButton = target.closest<HTMLButtonElement>('[data-chat-question]')
+			if (questionButton?.dataset.chatQuestion) {
+				setOpen(true)
+				sendMessage(questionButton.dataset.chatQuestion)
+			}
+		})
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault()
+			sendMessage(input.value)
+		})
+
+		document.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape' && root.classList.contains('is-open')) setOpen(false)
+		})
+	}
+
+	document.querySelectorAll<HTMLElement>('[data-portfolio-chat]').forEach(initPortfolioChat)
+</script>
+
+<style is:global>
+	.portfolio-chat {
+		position: fixed;
+		right: 1rem;
+		bottom: 1rem;
+		z-index: 30;
+	}
+
+	.chat-toggle {
+		display: grid;
+		width: 3.3rem;
+		height: 3.3rem;
+		place-items: center;
+		border: 1px solid rgba(var(--color-accent-rgb), 0.5);
+		border-radius: 999px;
+		background: var(--color-primary);
+		color: var(--color-text);
+		font-weight: 950;
+		cursor: pointer;
+		box-shadow: 0 18px 45px rgba(0, 0, 0, 0.38);
+	}
+
+	.chat-window {
+		position: absolute;
+		right: 0;
+		bottom: 4.1rem;
+		display: none;
+		width: min(380px, calc(100vw - 2rem));
+		max-height: min(640px, calc(100svh - 6rem));
+		grid-template-rows: auto minmax(180px, 1fr) auto auto;
+		overflow: hidden;
+		border: 1px solid var(--color-border);
+		border-radius: 8px;
+		background: rgba(11, 18, 32, 0.98);
+		box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
+	}
+
+	.portfolio-chat.is-open .chat-window {
+		display: grid;
+	}
+
+	.chat-header {
+		display: flex;
+		align-items: start;
+		justify-content: space-between;
+		gap: 1rem;
+		border-bottom: 1px solid var(--color-border);
+		padding: 1rem;
+	}
+
+	.chat-header h2,
+	.chat-header p {
+		margin: 0;
+	}
+
+	.chat-header h2 {
+		font-size: 1rem;
+	}
+
+	.chat-header p {
+		margin-top: 0.25rem;
+		color: var(--color-text-muted);
+		font-size: 0.85rem;
+	}
+
+	.chat-close {
+		display: grid;
+		width: 2rem;
+		height: 2rem;
+		flex: 0 0 auto;
+		place-items: center;
+		border: 1px solid var(--color-border);
+		border-radius: 8px;
+		background: transparent;
+		color: var(--color-text);
+		font-size: 1.25rem;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.chat-messages {
+		display: flex;
+		flex-direction: column;
+		gap: 0.7rem;
+		overflow-y: auto;
+		padding: 1rem;
+	}
+
+	.chat-row {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.65rem;
+		width: 100%;
+	}
+
+	.chat-row.user {
+		justify-content: flex-end;
+	}
+
+	.chat-row.assistant {
+		justify-content: flex-start;
+	}
+
+	.chat-avatar {
+		width: 2rem;
+		height: 2rem;
+		flex: 0 0 auto;
+		border: 1px solid rgba(var(--color-accent-rgb), 0.35);
+		border-radius: 999px;
+		object-fit: cover;
+		background: var(--color-bg-secondary);
+	}
+
+	.chat-message {
+		max-width: 88%;
+		border: 1px solid var(--color-border);
+		border-radius: 8px;
+		padding: 0.75rem 0.85rem;
+		font-size: 0.92rem;
+		line-height: 1.45;
+		white-space: pre-wrap;
+	}
+
+	.chat-message.assistant {
+		max-width: calc(100% - 2.65rem);
+		background: var(--color-bg-secondary);
+		color: var(--color-text);
+	}
+
+	.chat-message.user {
+		max-width: 78%;
+		border-color: rgba(var(--color-accent-rgb), 0.45);
+		background: rgba(var(--color-accent-rgb), 0.16);
+		color: var(--color-text);
+	}
+
+	.chat-message-text {
+		display: block;
+	}
+
+	.quick-questions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+		border-top: 1px solid var(--color-border);
+		padding: 0.75rem 1rem;
+	}
+
+	.quick-questions button {
+		border: 1px solid rgba(var(--color-accent-rgb), 0.35);
+		border-radius: 999px;
+		background: transparent;
+		padding: 0.45rem 0.65rem;
+		color: var(--color-accent);
+		font-size: 0.78rem;
+		font-weight: 750;
+		cursor: pointer;
+	}
+
+	.chat-form {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 0.55rem;
+		border-top: 1px solid var(--color-border);
+		padding: 0.9rem 1rem 1rem;
+	}
+
+	.chat-form input {
+		min-width: 0;
+		border: 1px solid var(--color-border);
+		border-radius: 8px;
+		background: var(--color-bg-tertiary);
+		padding: 0.75rem;
+		color: var(--color-text);
+		font: inherit;
+	}
+
+	.chat-form button {
+		border: 0;
+		border-radius: 8px;
+		background: var(--color-primary);
+		padding: 0 0.9rem;
+		color: var(--color-text);
+		font-weight: 850;
+		cursor: pointer;
+	}
+
+	.chat-form.is-sending button {
+		opacity: 0.72;
+		pointer-events: none;
+	}
+
+	@media (max-width: 480px) {
+		.portfolio-chat {
+			right: 0.75rem;
+			bottom: 0.75rem;
+		}
+
+		.chat-window {
+			width: calc(100vw - 1.5rem);
+			max-height: calc(100svh - 5.5rem);
+		}
+	}
+</style>
