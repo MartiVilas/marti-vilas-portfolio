@@ -52,7 +52,9 @@
 			"title": "Commercial Landing Page",
 			"type": "Web",
 			"description": "Conversion-focused page with value sections, social proof, and clear calls to action.",
-			"tools": ["HTML", "CSS", "SEO"]
+			"tools": ["HTML", "CSS", "SEO"],
+			"image": "/estudio-podcast-barcelona.png",
+			"url": "https://estudiopodcastbarcelona.com/"
 		}
 	],
 	"cv_label": "CV",
@@ -81,7 +83,7 @@
 	"contact_success_message": "Message sent. Thank you, I will reply soon.",
 	"contact_error_message": "Could not send it. Check the details or try again later.",
 	"experience_label": "Experience",
-	"learning_by_doing_title": "Where I have learned by doing",
+	"learning_by_doing_title": "Where I have learned ",
 	"experiences": [
 		{
 			"role": "Web Developer Trainee",

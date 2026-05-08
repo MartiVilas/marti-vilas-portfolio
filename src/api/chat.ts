@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro'
 import OpenAI from 'openai'
-import { chatbotProfile } from '../../data/chatbot-profile'
+import { chatbotProfile } from '../data/chatbot-profile'
 
 type ChatMessage = {
 	role: 'user' | 'assistant'

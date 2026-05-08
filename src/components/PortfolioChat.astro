@@ -216,10 +216,10 @@ const labels =
 		border: 1px solid rgba(var(--color-accent-rgb), 0.5);
 		border-radius: 999px;
 		background: var(--color-primary);
-		color: var(--color-text);
+		color: var(--color-button-text);
 		font-weight: 950;
 		cursor: pointer;
-		box-shadow: 0 18px 45px rgba(0, 0, 0, 0.38);
+		box-shadow: 0 18px 45px var(--color-shadow-strong);
 	}
 
 	.chat-window {
@@ -233,8 +233,8 @@ const labels =
 		overflow: hidden;
 		border: 1px solid var(--color-border);
 		border-radius: 8px;
-		background: rgba(11, 18, 32, 0.98);
-		box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
+		background: var(--color-chat-bg);
+		box-shadow: 0 28px 70px var(--color-shadow-strong);
 	}
 
 	.portfolio-chat.is-open .chat-window {
@@ -382,7 +382,7 @@ const labels =
 		border-radius: 8px;
 		background: var(--color-primary);
 		padding: 0 0.9rem;
-		color: var(--color-text);
+		color: var(--color-button-text);
 		font-weight: 850;
 		cursor: pointer;
 	}

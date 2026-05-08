@@ -17,7 +17,6 @@ const highlights = t('cv_highlights', locale);
 	</ul>
 	<div class="actions">
 		<a href={cvFile} class="button" download="Marti_Vilas_CV.pdf">{t('download_cv_button', locale)}</a>
-		<a href="mailto:hola@martivilas.dev" class="button secondary">{t('contact_button', locale)}</a>
 	</div>
 </section>
 
@@ -94,7 +93,7 @@ const highlights = t('cv_highlights', locale);
 		border-radius: 8px;
 		background: var(--color-primary);
 		padding: 0.9rem 1.2rem;
-		color: var(--color-text);
+		color: var(--color-button-text);
 		font-weight: 800;
 		text-decoration: none;
 	}
@@ -110,7 +109,7 @@ const highlights = t('cv_highlights', locale);
 	}
 
 	.button.secondary:hover {
-		background: rgba(var(--color-accent-rgb), 0.12);
+		background: var(--color-accent-soft);
 	}
 
 	@media (max-width: 920px) {

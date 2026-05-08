@@ -51,8 +51,10 @@
 		{
 			"title": "Landing Comercial",
 			"type": "Web",
-			"description": "Página enfocada a conversión con bloques de valor, prueba social y llamadas a la acción claras.",
-			"tools": ["HTML", "CSS", "SEO"]
+			"description": "Es una web de un estudio de grabación de podcasts en Barcelona que ofrece sesiones con audio, vídeo, iluminación y técnico incluidos.",
+			"tools": ["HTML", "CSS", "JavaScript", "SEO"],
+			"image": "/estudio-podcast-barcelona.png",
+			"url": "https://estudiopodcastbarcelona.com/"
 		}
 	],
 	"cv_label": "CV",
@@ -81,7 +83,7 @@
 	"contact_success_message": "Mensaje enviado. Gracias, te responderé pronto.",
 	"contact_error_message": "No se ha podido enviar. Revisa los datos o inténtalo más tarde.",
 	"experience_label": "Experiencia",
-	"learning_by_doing_title": "Dónde he aprendido haciendo",
+	"learning_by_doing_title": "Dónde he aprendido ",
 	"experiences": [
 		{
 			"role": "Web Developer Trainee",
@@ -122,7 +124,9 @@
 		{
 			"title": "Bachillerato - Rama Social-Económica",
 			"center": "I.E.S Rovira-Forns / Escola Sant Gervasi",
-			"period": "Sep 2019 - Jun 2022"
+			"period": "Sep 2019 - Jun 2022",
+			"badge": "Finalizado",
+			"featured": true
 		}
 	]
 }

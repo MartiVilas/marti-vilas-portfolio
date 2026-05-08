@@ -57,7 +57,7 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 		align-items: end;
 		padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 4vw, 3rem) clamp(2rem, 5vw, 4rem);
 		background:
-			linear-gradient(135deg, rgba(11, 18, 32, 0.96), rgba(17, 28, 46, 0.86)),
+			linear-gradient(135deg, var(--color-hero-overlay-start), var(--color-hero-overlay-end)),
 			url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80")
 				center/cover;
 	}
@@ -115,7 +115,7 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 	.hero-actions .primary {
 		border-color: var(--color-primary);
 		background: var(--color-primary);
-		color: var(--color-text);
+		color: var(--color-button-text);
 	}
 
 	.hero-actions .primary:hover {
@@ -123,15 +123,15 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 	}
 
 	.hero-actions a:not(.primary):hover {
-		background: rgba(var(--color-accent-rgb), 0.12);
+		background: var(--color-accent-soft);
 	}
 
 	.hero-panel {
 		border: 1px solid var(--color-border);
 		border-radius: 8px;
-		background: rgba(17, 28, 46, 0.88);
+		background: color-mix(in srgb, var(--color-bg-secondary) 88%, transparent);
 		padding: 1.2rem;
-		box-shadow: 0 22px 55px rgba(var(--color-accent-rgb), 0.12);
+		box-shadow: 0 22px 55px var(--color-shadow);
 	}
 
 	.hero-panel p {
