@@ -42,10 +42,12 @@
 	"technologies_label": "Tecnologías de",
 	"projects": [
 		{
-			"title": "Dashboard de Portfolio",
-			"type": "Frontend",
-			"description": "Interfaz responsive para presentar métricas, casos de estudio y enlaces clave con lectura rápida.",
-			"tools": ["Astro", "CSS", "UX"]
+			"title": "Pokédex de Equipo",
+			"type": "PokeAPI CRUD",
+			"description": "Aplicación para buscar Pokémon desde la PokeAPI, consultar sus datos principales y gestionar un equipo personalizado.",
+			"tools": ["HTML", "CSS", "JavaScript", "API"],
+			"image": "/pokeApi.png",
+			"url": "https://github.com/MartiVilas/PokeApi"
 		},
 		{
 			"title": "Gestor de Tareas",

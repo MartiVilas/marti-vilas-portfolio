@@ -42,10 +42,12 @@
 	"technologies_label": "Technologies for",
 	"projects": [
 		{
-			"title": "Portfolio Dashboard",
-			"type": "Frontend",
-			"description": "Responsive interface for presenting metrics, case studies, and key links with quick readability.",
-			"tools": ["Astro", "CSS", "UX"]
+			"title": "Team Pokédex",
+			"type": "PokeAPI CRUD",
+			"description": "Application for searching Pokémon through PokeAPI, viewing key stats, and managing a custom team.",
+			"tools": ["HTML", "CSS", "JavaScript", "API"],
+			"image": "/pokeApi.png",
+			"url": "https://github.com/MartiVilas/PokeApi"
 		},
 		{
 			"title": "Task Manager",
