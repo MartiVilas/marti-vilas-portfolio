@@ -3,6 +3,17 @@ import { defaultLocale, t, type Locale } from '../i18n';
 
 const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 const projects = t('projects', locale);
+
+const toolIcons: Record<string, string> = {
+	Astro: "https://cdn.simpleicons.org/astro/FF5A03",
+	CSS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+	HTML: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+	JavaScript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+	LocalStorage: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg",
+	SEO: "https://cdn.simpleicons.org/google/4285F4",
+	UI: "https://cdn.simpleicons.org/figma/F24E1E",
+	UX: "https://cdn.simpleicons.org/figma/F24E1E",
+};
 ---
 
 <section class="projects" id="proyectos" aria-labelledby="projects-title">
@@ -14,7 +25,7 @@ const projects = t('projects', locale);
 		{
 			projects.map((project) => (
 				<article class:list={['project-card', 'image' in project && project.image && 'project-card-with-image']}>
-					<div>
+					<div class="project-copy">
 						<span>{project.type}</span>
 						<h3>{project.title}</h3>
 						<p>{project.description}</p>
@@ -35,7 +46,10 @@ const projects = t('projects', locale);
 
 					<ul aria-label={`${t('technologies_label', locale)} ${project.title}`}>
 						{project.tools.map((tool) => (
-							<li>{tool}</li>
+							<li>
+								{toolIcons[tool] && <img src={toolIcons[tool]} alt="" aria-hidden="true" loading="lazy" />}
+								{tool}
+							</li>
 						))}
 					</ul>
 				</article>
@@ -99,6 +113,10 @@ const projects = t('projects', locale);
 		padding: 1rem;
 	}
 
+	.project-card-with-image .project-copy {
+		min-height: 205px;
+	}
+
 	.project-card:hover {
 		box-shadow: 0 18px 45px rgba(var(--color-accent-rgb), 0.16);
 	}
@@ -119,7 +137,8 @@ const projects = t('projects', locale);
 		display: block;
 		width: 100%;
 		height: 100%;
-		object-position: center top;
+		object-fit: cover;
+		object-position: center center;
 		transition: transform 0.35s ease;
 	}
 
@@ -157,6 +176,11 @@ const projects = t('projects', locale);
 	}
 
 	li {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.4rem;
+		min-height: 2.35rem;
 		border: 1px solid var(--color-border);
 		border-radius: 999px;
 		padding: 0.42rem 0.72rem;
@@ -164,6 +188,30 @@ const projects = t('projects', locale);
 		color: var(--color-text);
 		font-size: 0.85rem;
 		font-weight: 700;
+	}
+
+	li img {
+		display: block;
+		width: 1.05rem !important;
+		height: 1.05rem !important;
+		max-width: 1.05rem !important;
+		max-height: 1.05rem !important;
+		flex: 0 0 auto;
+		object-fit: contain;
+	}
+
+	.project-card-with-image li {
+		gap: 0.32rem;
+		min-height: 2rem;
+		padding: 0.34rem 0.54rem;
+		font-size: 0.78rem;
+	}
+
+	.project-card-with-image li img {
+		width: 0.9rem !important;
+		height: 0.9rem !important;
+		max-width: 0.9rem !important;
+		max-height: 0.9rem !important;
 	}
 
 	@media (max-width: 920px) {
@@ -174,6 +222,10 @@ const projects = t('projects', locale);
 		.project-card {
 			min-height: 280px;
 		}
+
+		.project-card-with-image .project-copy {
+			min-height: 180px;
+		}
 	}
 
 	@media (max-width: 600px) {
@@ -183,6 +235,10 @@ const projects = t('projects', locale);
 
 		.project-card {
 			min-height: 240px;
+		}
+
+		.project-card-with-image .project-copy {
+			min-height: 0;
 		}
 	}
 </style>

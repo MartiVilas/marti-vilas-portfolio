@@ -14,12 +14,17 @@
 	"english_language": "English",
 	"language_selector": "Language selector",
 	"personal_portfolio": "Personal Portfolio",
-	"introduction_text": "Web developer focused on clean interfaces, useful products, and code that is not a pain to maintain.",
+	"introduction_text": "Web developer focused on clean interfaces, useful products, and code that doesn't scare to maintain.",
 	"projects_button": "View projects",
 	"cv_button": "Read CV",
 	"quick_summary": "Quick summary",
 	"availability_text": "Available for web projects, hiring, and collaborations.",
 	"technology_stack": "Frontend · React · TypeScript · UI",
+	"social_links_label": "Social links",
+	"social_links": [
+		{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/mart%C3%AD-vil%C3%A0s-b51a63212/", "icon": "/linkedin_icon.svg" },
+		{ "label": "GitHub", "url": "https://github.com/MartiVilas", "icon": "/github-icon.svg" }
+	],
 	"synopsis_label": "Synopsis",
 	"synopsis_title": "I build digital products with judgment, detail, and solid craft.",
 	"synopsis_text": "I am Marti Vilas, a developer focused on creating clear, fast, and polished web experiences. I like working close to the problem: understanding what the user needs, turning it into an interface, and leaving behind a maintainable technical base.",
@@ -45,8 +50,10 @@
 		{
 			"title": "Task Manager",
 			"type": "Product",
-			"description": "Application for organizing tasks, prioritizing deliveries, and keeping a clean workflow.",
-			"tools": ["JavaScript", "LocalStorage", "UI"]
+			"description": "Software for automating machining quotes from 3D files, calculating materials, times, and costs to generate offers ready to send.",
+			"tools": ["JavaScript", "LocalStorage", "UI"],
+			"image": "/fabriqer-login.svg",
+			"url": "https://app.fabriqer.com/login"
 		},
 		{
 			"title": "Commercial Landing Page",
@@ -59,11 +66,11 @@
 	],
 	"cv_label": "CV",
 	"professional_profile_title": "Professional profile",
-	"cv_summary": "Web Developer Trainee and Web Application Development (DAW) student based in Barcelona. Frontend development with React.js and TypeScript on real-world projects, with experience applying SCRUM and Agile methodologies.",
+	"cv_summary": "Web Developer Trainee and Web Application Development (DAW) graduate based in Barcelona. Frontend development with React.js and TypeScript on real-world projects, with experience applying SCRUM and Agile methodologies.",
 	"contact_button": "Contact",
 	"download_cv_button": "Download CV",
 	"cv_highlights": [
-		"Frontend with React.js, TypeScript, Vue.js (Quasar), and Astro.",
+		"Frontend with React.js, TypeScript, Vue.js (Quasar and Nuxt), and Astro.",
 		"State management with Zustand and backend with Node.js + TypeScript.",
 		"Responsive layout and adaptive web application development.",
 		"SCRUM/Agile methodologies: sprints, dailies, and code review."

@@ -5,7 +5,8 @@ export const prerender = false;
 const BREVO_CONTACTS_ENDPOINT = "https://api.brevo.com/v3/contacts";
 const BREVO_TRANSACTIONAL_EMAIL_ENDPOINT = "https://api.brevo.com/v3/smtp/email";
 const DEFAULT_NOTIFICATION_EMAIL = "marti.vilas14@gmail.com";
-const DEFAULT_SENDER_NAME = "Marti Vilas Portfolio";
+const DEFAULT_SENDER_NAME = "Marti Vilas";
+const DEFAULT_CONFIRMATION_TEMPLATE_ID = 1;
 
 function jsonResponse(body: unknown, status = 200) {
 	return new Response(JSON.stringify(body), {
@@ -110,6 +111,48 @@ async function sendNotificationEmail({
 	});
 }
 
+async function sendConfirmationEmail({
+	apiKey,
+	name,
+	email,
+	message,
+	portfolioUrl,
+}: {
+	apiKey: string;
+	name: string;
+	email: string;
+	message: string;
+	portfolioUrl: string;
+}) {
+	const templateId = Number(import.meta.env.BREVO_CONFIRMATION_TEMPLATE_ID ?? DEFAULT_CONFIRMATION_TEMPLATE_ID);
+	const senderName = import.meta.env.BREVO_SENDER_NAME ?? DEFAULT_SENDER_NAME;
+	const subject = message || "Consulta desde el portfolio";
+
+	return fetch(BREVO_TRANSACTIONAL_EMAIL_ENDPOINT, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			"api-key": apiKey,
+		},
+		body: JSON.stringify({
+			to: [
+				{
+					email,
+					name,
+				},
+			],
+			templateId,
+			params: {
+				nombre: name,
+				email,
+				asunto: subject,
+				mi_nombre: senderName,
+				portfolio_url: portfolioUrl,
+			},
+		}),
+	});
+}
+
 export const POST: APIRoute = async ({ request }) => {
 	const apiKey = import.meta.env.BREVO_API_KEY;
 
@@ -133,6 +176,7 @@ export const POST: APIRoute = async ({ request }) => {
 	const email = getRequestValue(data, "email");
 	const message = getRequestValue(data, "message");
 	const consent = getRequestConsent(data);
+	const portfolioUrl = import.meta.env.BREVO_PORTFOLIO_URL ?? new URL(request.url).origin;
 
 	if (!name || !email || !consent) {
 		return jsonResponse({ message: "Missing required fields." }, 400);
@@ -187,6 +231,25 @@ export const POST: APIRoute = async ({ request }) => {
 		});
 
 		return jsonResponse({ message: "Brevo rejected the notification email." }, 502);
+	}
+
+	const confirmationEmailResponse = await sendConfirmationEmail({
+		apiKey,
+		name,
+		email,
+		message,
+		portfolioUrl,
+	});
+
+	if (!confirmationEmailResponse.ok) {
+		const errorText = await confirmationEmailResponse.text();
+
+		console.error("Brevo rejected the confirmation email request.", {
+			status: confirmationEmailResponse.status,
+			body: errorText,
+		});
+
+		return jsonResponse({ message: "Brevo rejected the confirmation email." }, 502);
 	}
 
 	return jsonResponse({ message: "ok" });

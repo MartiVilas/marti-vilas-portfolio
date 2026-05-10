@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1910 915" role="img" aria-labelledby="title desc">
+	<title id="title">Pantalla de inicio de sesion de Fabriqer</title>
+	<desc id="desc">Vista de una pantalla de login con pasos de configuracion sobre fondo azul.</desc>
+	<defs>
+		<linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+			<stop offset="0" stop-color="#0f2046" />
+			<stop offset="1" stop-color="#354fa8" />
+		</linearGradient>
+		<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+			<feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#07122e" flood-opacity=".22" />
+		</filter>
+	</defs>
+	<rect width="1910" height="915" fill="url(#bg)" />
+	<path d="M319 198C628 126 1139 50 1427 186c197 93 193 246 95 305" fill="none" stroke="#a9c0ff" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="20 15" opacity=".9" />
+	<path d="M526 646C530 448 700 390 1046 400c229 7 342 4 506 45" fill="none" stroke="#a9c0ff" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="20 15" opacity=".9" />
+	<g transform="translate(258 112)">
+		<rect x="7" y="0" width="160" height="92" rx="5" fill="#c8cbd2" />
+		<rect x="15" y="9" width="144" height="76" rx="2" fill="#536be3" />
+		<rect x="25" y="37" width="49" height="5" rx="2.5" fill="#a9b8ff" />
+		<rect x="25" y="49" width="64" height="5" rx="2.5" fill="#a9b8ff" />
+		<rect x="25" y="61" width="49" height="5" rx="2.5" fill="#a9b8ff" />
+		<rect x="90" y="24" width="54" height="54" fill="#fff" />
+		<circle cx="117" cy="51" r="12" fill="#536be3" />
+		<path d="M117 44v13m-5-5 5 6 5-6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+		<rect x="0" y="87" width="174" height="9" rx="4" fill="#c8cbd2" />
+	</g>
+	<g transform="translate(228 238)">
+		<circle cx="18" cy="18" r="18" fill="#536be3" />
+		<text x="18" y="29" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#fff">1</text>
+		<text x="45" y="24" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#fff">Sube los archivos 3D</text>
+	</g>
+	<g transform="translate(736 222)" filter="url(#shadow)">
+		<rect width="440" height="440" rx="11" fill="#fff" />
+		<text x="220" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="800" fill="#050505">Inicia sesi&#243;n</text>
+		<g transform="translate(36 109)">
+			<rect width="368" height="56" rx="3" fill="#fff" stroke="#bdbdbd" />
+			<rect x="13" y="-7" width="51" height="16" fill="#fff" />
+			<text x="14" y="5" font-family="Arial, sans-serif" font-size="12" fill="#333">Email</text>
+			<text x="22" y="35" font-family="Arial, sans-serif" font-size="16" fill="#929292">correo.electr&#243;nico@fabriqer.com</text>
+		</g>
+		<g transform="translate(36 182)">
+			<rect width="368" height="56" rx="3" fill="#fff" stroke="#bdbdbd" />
+			<rect x="13" y="-7" width="77" height="16" fill="#fff" />
+			<text x="14" y="5" font-family="Arial, sans-serif" font-size="12" fill="#333">Contrase&#241;a</text>
+			<text x="22" y="35" font-family="Arial, sans-serif" font-size="16" fill="#929292">Contrase&#241;a</text>
+		</g>
+		<text x="220" y="262" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#4365ef">&#191;Has olvidado tu contrase&#241;a?</text>
+		<rect x="36" y="291" width="368" height="42" rx="4" fill="#ececec" />
+		<text x="220" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#c9c9c9">Iniciar sesi&#243;n</text>
+		<rect x="36" y="349" width="74" height="40" rx="4" fill="#fff" stroke="#4365ef" />
+		<text x="73" y="374" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#4365ef">ES</text>
+	</g>
+	<text x="804" y="689" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="#fff">&#191;No tienes cuenta?</text>
+	<text x="972" y="689" font-family="Arial, sans-serif" font-size="16" fill="#d9e2ff">Contactar Soporte</text>
+	<g transform="translate(1428 367)">
+		<rect width="113" height="95" rx="6" fill="#c8cbd2" />
+		<rect x="36" y="10" width="43" height="6" rx="3" fill="#4864e7" />
+		<rect x="11" y="24" width="90" height="6" rx="3" fill="#4864e7" />
+		<rect x="11" y="44" width="42" height="6" rx="3" fill="#8b8b8b" />
+		<rect x="11" y="58" width="42" height="6" rx="3" fill="#8b8b8b" />
+		<rect x="11" y="72" width="42" height="6" rx="3" fill="#8b8b8b" />
+		<rect x="64" y="45" width="113" height="95" rx="6" fill="#fff" />
+		<rect x="100" y="58" width="43" height="6" rx="3" fill="#4864e7" />
+		<rect x="75" y="72" width="90" height="6" rx="3" fill="#4864e7" />
+		<rect x="75" y="92" width="42" height="6" rx="3" fill="#95abf7" />
+		<rect x="75" y="108" width="42" height="6" rx="3" fill="#95abf7" />
+		<rect x="75" y="124" width="42" height="6" rx="3" fill="#95abf7" />
+		<circle cx="160" cy="94" r="6" fill="#4864e7" />
+		<circle cx="160" cy="110" r="6" fill="#4864e7" />
+		<circle cx="160" cy="126" r="6" fill="#4864e7" />
+	</g>
+	<g transform="translate(1396 538)">
+		<circle cx="18" cy="18" r="18" fill="#536be3" />
+		<text x="18" y="29" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#fff">2</text>
+		<text x="45" y="24" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#fff">Configura material y tiempos</text>
+	</g>
+	<g transform="translate(476 659)">
+		<rect width="84" height="113" rx="5" fill="#c8cbd2" />
+		<rect x="10" y="9" width="19" height="12" fill="#4864e7" />
+		<rect x="10" y="27" width="61" height="4" rx="2" fill="#8b8b8b" />
+		<rect x="10" y="43" width="61" height="4" rx="2" fill="#8b8b8b" />
+		<rect x="10" y="59" width="61" height="4" rx="2" fill="#8b8b8b" />
+		<rect x="54" y="19" width="84" height="113" rx="5" fill="#fff" />
+		<rect x="85" y="27" width="43" height="4" rx="2" fill="#4864e7" />
+		<rect x="85" y="42" width="31" height="4" rx="2" fill="#4864e7" />
+		<rect x="64" y="55" width="63" height="4" rx="2" fill="#95abf7" />
+		<rect x="64" y="72" width="48" height="4" rx="2" fill="#95abf7" />
+		<rect x="64" y="88" width="61" height="4" rx="2" fill="#95abf7" />
+		<circle cx="138" cy="124" r="15" fill="#536be3" />
+		<path d="M138 116v13m-5-5 5 6 5-6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+	</g>
+	<g transform="translate(382 827)">
+		<circle cx="17" cy="17" r="17" fill="#536be3" />
+		<text x="17" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#fff">3</text>
+		<text x="44" y="24" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#fff">Descarga la oferta para tu cliente</text>
+	</g>
+</svg>

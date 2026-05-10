@@ -12,6 +12,7 @@ import Synopsis from './Synopsis.astro';
 import { defaultLocale, t, type Locale } from '../i18n';
 
 const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+const socialLinks = t('social_links', locale);
 ---
 
 <Layout locale={locale}>
@@ -26,6 +27,14 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 				<div class="hero-actions">
 					<a href="#proyectos" class="primary">{t('projects_button', locale)}</a>
 					<a href="#cv">{t('cv_button', locale)}</a>
+					<nav class="social-links" aria-label={t('social_links_label', locale)}>
+						{socialLinks.map((link) => (
+							<a href={link.url} target="_blank" rel="noreferrer">
+								<img class="social-icon" src={link.icon} alt="" aria-hidden="true" loading="lazy" />
+								{link.label}
+							</a>
+						))}
+					</nav>
 				</div>
 			</div>
 			<div class="hero-panel" aria-label={t('quick_summary', locale)}>
@@ -51,15 +60,12 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 <style>
 	.hero {
 		display: grid;
-		min-height: calc(100svh - 66px);
+		min-height: clamp(520px, 72svh, 680px);
 		grid-template-columns: minmax(0, 1fr) minmax(280px, 0.36fr);
 		gap: clamp(2rem, 5vw, 5rem);
-		align-items: end;
-		padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 4vw, 3rem) clamp(2rem, 5vw, 4rem);
-		background:
-			linear-gradient(135deg, var(--color-hero-overlay-start), var(--color-hero-overlay-end)),
-			url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80")
-				center/cover;
+		align-items: center;
+		padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem);
+		background: linear-gradient(135deg, var(--color-hero-overlay-start), var(--color-hero-overlay-end));
 	}
 
 	.hero-copy {
@@ -99,7 +105,8 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 		margin-top: 2rem;
 	}
 
-	.hero-actions a {
+	.hero-actions a,
+	.social-links a {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -123,6 +130,28 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 	}
 
 	.hero-actions a:not(.primary):hover {
+		background: var(--color-accent-soft);
+	}
+
+	.social-links {
+		display: contents;
+	}
+
+	.social-links a {
+		gap: 0.45rem;
+	}
+
+	.social-icon {
+		display: block;
+		width: 1.1rem !important;
+		height: 1.1rem !important;
+		max-width: 1.1rem !important;
+		max-height: 1.1rem !important;
+		flex: 0 0 auto;
+		object-fit: contain;
+	}
+
+	.social-links a:hover {
 		background: var(--color-accent-soft);
 	}
 
@@ -160,7 +189,8 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 			padding-top: 5rem;
 		}
 
-		.hero-actions a {
+		.hero-actions a,
+		.social-links a {
 			flex: 1 1 auto;
 		}
 	}

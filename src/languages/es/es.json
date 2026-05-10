@@ -14,12 +14,17 @@
 	"english_language": "Inglés",
 	"language_selector": "Selector de idioma",
 	"personal_portfolio": "Portfolio Personal",
-	"introduction_text": "Desarrollador web con foco en interfaces limpias, productos útiles y código que no da pereza mantener.",
+	"introduction_text": "Desarrollador web con foco en interfaces limpias, productos útiles y código que no asusta mantener.",
 	"projects_button": "Ver proyectos",
 	"cv_button": "Leer CV",
 	"quick_summary": "Resumen rápido",
 	"availability_text": "Disponible para proyectos web, contrataciones y colaboraciones.",
 	"technology_stack": "Frontend · React · TypeScript · UI",
+	"social_links_label": "Enlaces sociales",
+	"social_links": [
+		{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/mart%C3%AD-vil%C3%A0s-b51a63212/", "icon": "/linkedin_icon.svg" },
+		{ "label": "GitHub", "url": "https://github.com/MartiVilas", "icon": "/github-icon.svg" }
+	],
 	"synopsis_label": "Sinopsis",
 	"synopsis_title": "Construyo productos digitales con criterio, detalle y mucho oficio.",
 	"synopsis_text": "Soy Marti Vilas, desarrollador enfocado en crear experiencias web claras, rápidas y cuidadas. Me gusta trabajar cerca del problema: entender lo que necesita el usuario, convertirlo en interfaz y dejar una base técnica mantenible.",
@@ -45,8 +50,10 @@
 		{
 			"title": "Gestor de Tareas",
 			"type": "Producto",
-			"description": "Aplicación para organizar tareas, priorizar entregas y mantener un flujo de trabajo limpio.",
-			"tools": ["JavaScript", "LocalStorage", "UI"]
+			"description": "Software para automatizar presupuestos de mecanizado desde archivos 3D, calculando materiales, tiempos y costes para generar ofertas listas para enviar.",
+			"tools": ["JavaScript", "LocalStorage", "UI"],
+			"image": "/fabriqer-login.svg",
+			"url": "https://app.fabriqer.com/login"
 		},
 		{
 			"title": "Landing Comercial",
@@ -59,11 +66,11 @@
 	],
 	"cv_label": "CV",
 	"professional_profile_title": "Perfil profesional",
-	"cv_summary": "Web Developer Trainee y estudiante de CFGS DAW en Barcelona. Frontend con React.js y TypeScript en proyectos reales, con experiencia aplicando metodologías SCRUM y Agile.",
+	"cv_summary": "Web Developer Trainee y graduado de CFGS DAW en Barcelona. Frontend con React.js y TypeScript en proyectos reales, con experiencia aplicando metodologías SCRUM y Agile.",
 	"contact_button": "Contactar",
 	"download_cv_button": "Descargar CV",
 	"cv_highlights": [
-		"Frontend con React.js, TypeScript, Vue.js (Quasar) y Astro.",
+		"Frontend con React.js, TypeScript, Vue.js (Quasar and Nuxt) y Astro.",
 		"Gestión de estado con Zustand y backend en Node.js + TypeScript.",
 		"Maquetación responsive y desarrollo de aplicaciones web adaptables.",
 		"Metodologías SCRUM/Agile: sprints, dailies y revisión de código."
