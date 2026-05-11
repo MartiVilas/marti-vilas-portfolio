@@ -5,7 +5,7 @@ export const prerender = false;
 const BREVO_CONTACTS_ENDPOINT = "https://api.brevo.com/v3/contacts";
 const BREVO_TRANSACTIONAL_EMAIL_ENDPOINT = "https://api.brevo.com/v3/smtp/email";
 const DEFAULT_NOTIFICATION_EMAIL = "marti.vilas14@gmail.com";
-const DEFAULT_SENDER_NAME = "Marti Vilas";
+const DEFAULT_SENDER_NAME = "Martí Vilàs";
 const DEFAULT_CONFIRMATION_TEMPLATE_ID = 1;
 
 function jsonResponse(body: unknown, status = 200) {
@@ -87,7 +87,7 @@ async function sendNotificationEmail({
 			to: [
 				{
 					email: notificationEmail,
-					name: "Marti Vilas",
+					name: "Martí Vilàs",
 				},
 			],
 			replyTo: {

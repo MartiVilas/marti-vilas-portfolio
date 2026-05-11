@@ -1,9 +1,12 @@
 ---
-import cvFile from '../assets/MARTI_VILAS_CV_2025.pdf';
+import cvFileEn from '../assets/MARTI_VILAS_CV_2025_ENGLISH.pdf';
+import cvFileEs from '../assets/MARTI_VILAS_CV_2025_CORREGIDO_WEB.pdf';
 import { defaultLocale, t, type Locale } from '../i18n';
 
 const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 const highlights = t('cv_highlights', locale);
+const cvFile = locale === 'en' ? cvFileEn : cvFileEs;
+const cvDownloadName = locale === 'en' ? 'Marti_Vilas_CV_EN.pdf' : 'Marti_Vilas_CV_ES.pdf';
 ---
 
 <section class="cv" id="cv" aria-labelledby="cv-title">
@@ -16,7 +19,7 @@ const highlights = t('cv_highlights', locale);
 		{highlights.map((item) => <li>{item}</li>)}
 	</ul>
 	<div class="actions">
-		<a href={cvFile} class="button" download="Marti_Vilas_CV.pdf">{t('download_cv_button', locale)}</a>
+		<a href={cvFile} class="button" download={cvDownloadName}>{t('download_cv_button', locale)}</a>
 	</div>
 </section>
 

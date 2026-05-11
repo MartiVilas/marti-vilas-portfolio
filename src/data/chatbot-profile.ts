@@ -1,5 +1,5 @@
 export const chatbotProfile = `
-Nombre: Marti Vilas.
+Nombre: Martí Vilàs.
 Ubicacion: Santa Perpetua de Mogoda, provincia de Barcelona, a 20 minutos de Barcelona ciudad, Espana.
 Perfil: Web Developer Trainee y estudiante de CFGS Desarrollo de Aplicaciones Web (DAW).
 

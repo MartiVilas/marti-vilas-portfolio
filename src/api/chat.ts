@@ -73,7 +73,7 @@ export const POST: APIRoute = async ({ request }) => {
 		const response = await openai.responses.create({
 			model: import.meta.env.OPENAI_CHAT_MODEL ?? 'gpt-5.4-mini',
 			instructions:
-				`Eres MartiMate, el asistente virtual del portfolio personal de Marti Vilas. ` +
+				`Eres MartiMate, el asistente virtual del portfolio personal de Martí Vilàs. ` +
 				`Responde en ${locale === 'en' ? 'ingles' : 'espanol'} salvo que el usuario pida otro idioma. ` +
 				`Usa exclusivamente la informacion del perfil proporcionado. ` +
 				`Si no sabes un dato, no lo inventes: dilo brevemente y sugiere contactar con Marti desde el formulario de contacto. ` +
