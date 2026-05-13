@@ -53,15 +53,15 @@
 			"title": "Task Manager",
 			"type": "Product",
 			"description": "Software for automating machining quotes from 3D files, calculating materials, times, and costs to generate offers ready to send.",
-			"tools": ["JavaScript", "LocalStorage", "UI"],
+			"tools": ["TypeScript", "React", "UI", "UX"],
 			"image": "/fabriqer-login.svg",
 			"url": "https://app.fabriqer.com/login"
 		},
 		{
 			"title": "Commercial Landing Page",
 			"type": "Web",
-			"description": "Conversion-focused page with value sections, social proof, and clear calls to action.",
-			"tools": ["HTML", "CSS", "SEO"],
+			"description": "Website for a podcast recording studio in Barcelona offering sessions with audio, video, lighting, and a technician included.",
+			"tools": ["HTML", "CSS", "JavaScript", "SEO"],
 			"image": "/estudio-podcast-barcelona.png",
 			"url": "https://estudiopodcastbarcelona.com/"
 		}
@@ -133,7 +133,9 @@
 		{
 			"title": "Spanish Baccalaureate - Social Sciences & Economics",
 			"center": "I.E.S Rovira-Forns / Escola Sant Gervasi",
-			"period": "Sep 2019 - Jun 2022"
+			"period": "Sep 2019 - Jun 2022",
+			"badge": "Completed",
+			"featured": true
 		}
 	]
 }

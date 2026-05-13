@@ -53,7 +53,7 @@
 			"title": "Gestor de Tareas",
 			"type": "Producto",
 			"description": "Software para automatizar presupuestos de mecanizado desde archivos 3D, calculando materiales, tiempos y costes para generar ofertas listas para enviar.",
-			"tools": ["JavaScript", "LocalStorage", "UI"],
+			"tools": ["TypeScript", "React", "UI", "UX"],
 			"image": "/fabriqer-login.svg",
 			"url": "https://app.fabriqer.com/login"
 		},

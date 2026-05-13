@@ -7,7 +7,7 @@ type ChatMessage = {
 	content: string
 }
 
-const MAX_MESSAGES = 8
+const MAX_MESSAGES = 12
 const MAX_MESSAGE_LENGTH = 700
 
 function sanitizeMessages(messages: unknown): ChatMessage[] {
@@ -78,6 +78,8 @@ export const POST: APIRoute = async ({ request }) => {
 				`Usa exclusivamente la informacion del perfil proporcionado. ` +
 				`Si no sabes un dato, no lo inventes: dilo brevemente y sugiere contactar con Marti desde el formulario de contacto. ` +
 				`Mantén respuestas claras, naturales y de 2 a 5 frases. ` +
+				`Si hacen preguntas fuera de tema, responde con cortesía pero señalando que no están dentro de su ámbito. Recalcando que se usa para el portfolio de Martí Vilàs. ` +
+				`Responde en el idioma que te pregunten, aunque no sea el predeterminado. ` +
 				`No uses markdown, asteriscos, listas con guiones, tablas ni formato especial; responde solo con texto plano.\n\n` +
 				`PERFIL DE MARTI:\n${chatbotProfile}`,
 			input: [
