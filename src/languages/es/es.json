@@ -35,7 +35,7 @@
 	"spoken_languages": [
 		{ "name": "Catalán", "level": "Nativo", "flag": "fi-es-ct" },
 		{ "name": "Castellano", "level": "Nativo", "flag": "fi-es" },
-		{ "name": "Inglés", "level": "B2.2", "flag": "fi-gb" }
+		{ "name": "Inglés", "level": "Professional working proficiency", "flag": "fi-gb" }
 	],
 	"projects_label": "Proyectos",
 	"recent_work_title": "Trabajo reciente",
@@ -68,7 +68,7 @@
 	],
 	"cv_label": "CV",
 	"professional_profile_title": "Perfil profesional",
-	"cv_summary": "Web Developer Trainee y graduado de CFGS DAW en Barcelona. Frontend con React.js y TypeScript en proyectos reales, con experiencia aplicando metodologías SCRUM y Agile.",
+	"cv_summary": "Junior Developer trabajando actualmente en I-MAS (Barcelona). Frontend con React.js y TypeScript en proyectos reales, con experiencia aplicando metodologías SCRUM y Agile.",
 	"contact_button": "Contactar",
 	"download_cv_button": "Descargar CV",
 	"cv_highlights": [
@@ -95,7 +95,7 @@
 	"learning_by_doing_title": "Dónde he aprendido ",
 	"experiences": [
 		{
-			"role": "Web Developer Trainee",
+			"role": "Junior Developer",
 			"place": "I-MAS",
 			"period": "Sep 2025 - Actualidad",
 			"description": "Desarrollo frontend con React.js y TypeScript en proyectos reales. Gestión del estado global con Zustand y backend con Node.js + TypeScript. Despliegue de landings en WordPress y aplicación de metodologías SCRUM/Agile. Adopción de IA generativa como complemento al flujo de trabajo, con criterio y validación propios."

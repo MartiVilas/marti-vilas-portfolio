@@ -1,7 +1,7 @@
 export const chatbotProfile = `
 Nombre: Martí Vilàs.
 Ubicacion: Santa Perpetua de Mogoda, provincia de Barcelona, a 20 minutos de Barcelona ciudad, Espana.
-Perfil: Web Developer Trainee y estudiante de CFGS Desarrollo de Aplicaciones Web (DAW).
+Perfil: Junior Developer trabajando actualmente en I-MAS y estudiante de CFGS Desarrollo de Aplicaciones Web (DAW).
 
 Resumen profesional:
 Marti es un desarrollador web enfocado en crear interfaces limpias, productos utiles y codigo mantenible. Le interesa trabajar cerca del problema, entender las necesidades del usuario y convertirlas en experiencias web claras, rapidas y cuidadas.
@@ -16,7 +16,7 @@ Stack tecnico:
 - Otros: WordPress, maquetacion responsive, UX/UI, SEO basico y uso criterio de IA generativa en el flujo de trabajo.
 
 Experiencia:
-- Web Developer Trainee en I-MAS, desde septiembre de 2025 hasta la actualidad. Desarrollo frontend con React.js y TypeScript en proyectos reales, gestion de estado global con Zustand, backend con Node.js y TypeScript, despliegue de landings en WordPress y trabajo con metodologias SCRUM/Agile.
+- Junior Developer en I-MAS, desde septiembre de 2025 hasta la actualidad. Desarrollo frontend con React.js y TypeScript en proyectos reales, gestion de estado global con Zustand, backend con Node.js y TypeScript, despliegue de landings en WordPress y trabajo con metodologias SCRUM/Agile.
 - Vendedor textil en IKEA Sabadell durante junio-septiembre de 2024 y junio-septiembre de 2025. Atencion al cliente, resolucion de dudas y gestion de stock.
 - Mozo de almacen en Mango / Punto Fa S.L. en Llica d'Amunt, agosto de 2021 a agosto de 2023. Empaquetamiento, distribucion de prendas y organizacion de almacen.
 - Monitor / dinamizador deportivo en Escola Sant Gervasi, Mollet del Valles, septiembre de 2019 a 2022. Monitor de baloncesto extraescolar para alumnos de 9 a 11 anos.
@@ -28,7 +28,7 @@ Formacion:
 Idiomas:
 - Catalan: nativo.
 - Castellano: nativo.
-- Ingles: B2.2.
+- Ingles: Professional working proficiency.
 
 Proyectos destacados del portfolio:
 - Dashboard de Portfolio: interfaz responsive para presentar metricas, casos de estudio y enlaces clave.

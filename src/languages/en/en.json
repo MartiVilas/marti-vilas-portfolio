@@ -35,7 +35,7 @@
 	"spoken_languages": [
 		{ "name": "Catalan", "level": "Native", "flag": "fi-es-ct" },
 		{ "name": "Spanish", "level": "Native", "flag": "fi-es" },
-		{ "name": "English", "level": "B2.2", "flag": "fi-gb" }
+		{ "name": "English", "level": "Professional working proficiency", "flag": "fi-gb" }
 	],
 	"projects_label": "Projects",
 	"recent_work_title": "Recent work",
@@ -68,7 +68,7 @@
 	],
 	"cv_label": "CV",
 	"professional_profile_title": "Professional profile",
-	"cv_summary": "Web Developer Trainee and Web Application Development (DAW) graduate based in Barcelona. Frontend development with React.js and TypeScript on real-world projects, with experience applying SCRUM and Agile methodologies.",
+	"cv_summary": "Junior Developer currently working at I-MAS (Barcelona). Frontend development with React.js and TypeScript on real-world projects, with experience applying SCRUM and Agile methodologies.",
 	"contact_button": "Contact",
 	"download_cv_button": "Download CV",
 	"cv_highlights": [
@@ -95,7 +95,7 @@
 	"learning_by_doing_title": "Where I have learned ",
 	"experiences": [
 		{
-			"role": "Web Developer Trainee",
+			"role": "Junior Developer",
 			"place": "I-MAS",
 			"period": "Sep 2025 - Present",
 			"description": "Frontend development with React.js and TypeScript on real-world projects. Global state management with Zustand and backend with Node.js + TypeScript. Landing page deployment on WordPress and SCRUM/Agile methodologies. Adoption of generative AI as a complement to my workflow, applied with judgment and personal validation."
