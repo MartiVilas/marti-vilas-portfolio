@@ -35,7 +35,7 @@
 	"spoken_languages": [
 		{ "name": "Catalan", "level": "Native", "flag": "fi-es-ct" },
 		{ "name": "Spanish", "level": "Native", "flag": "fi-es" },
-		{ "name": "English", "level": "Professional working proficiency", "flag": "fi-gb" }
+		{ "name": "English", "level": "B2", "flag": "fi-gb" }
 	],
 	"projects_label": "Projects",
 	"recent_work_title": "Recent work",
@@ -68,14 +68,15 @@
 	],
 	"cv_label": "CV",
 	"professional_profile_title": "Professional profile",
-	"cv_summary": "Junior Developer currently working at I-MAS (Barcelona). Frontend development with React.js and TypeScript on real-world projects, with experience applying SCRUM and Agile methodologies.",
+	"cv_summary": "Frontend-focused web developer at I-MAS (Barcelona), where I joined as an intern and moved onto a permanent contract. Production applications with React.js and TypeScript, plus backend work with Node.js, in teams working with SCRUM and Agile.",
 	"contact_button": "Contact",
 	"download_cv_button": "Download CV",
 	"cv_highlights": [
-		"Frontend with React.js, TypeScript, Vue.js (Quasar and Nuxt), and Astro.",
+		"Frontend with React.js, TypeScript, Vue.js (Quasar), and Astro.",
 		"State management with Zustand and backend with Node.js + TypeScript.",
 		"Responsive layout and adaptive web application development.",
-		"SCRUM/Agile methodologies: sprints, dailies, and code review."
+		"SCRUM/Agile methodologies: sprints, dailies, code reviews, and retrospectives.",
+		"Also PHP, SQL, MySQL, and Kotlin, with Git and WordPress."
 	],
 	"contact_label": "Contact",
 	"contact_title": "Let's talk about your next project",
@@ -95,10 +96,10 @@
 	"learning_by_doing_title": "Where I have learned ",
 	"experiences": [
 		{
-			"role": "Junior Developer",
+			"role": "Web Developer",
 			"place": "I-MAS",
-			"period": "Sep 2025 - Present",
-			"description": "Frontend development with React.js and TypeScript on real-world projects. Global state management with Zustand and backend with Node.js + TypeScript. Landing page deployment on WordPress and SCRUM/Agile methodologies. Adoption of generative AI as a complement to my workflow, applied with judgment and personal validation."
+			"period": "Sep 2025 - Present (permanent since Jun 2026)",
+			"description": "Frontend development with React.js and TypeScript on live client projects. Global state management with Zustand and backend with Node.js + TypeScript. Design and development of responsive web applications. Deployment and configuration of a WordPress landing page on a client domain, and SCRUM/Agile methodologies. Adoption of generative AI as a complement to my workflow, applied with judgment and personal validation."
 		},
 		{
 			"role": "Textile Sales Associate",
@@ -123,9 +124,9 @@
 	"education_title": "Education",
 	"studies": [
 		{
-			"title": "Higher VET in Web Application Development (DAW)",
+			"title": "Higher Diploma in Web Application Development (DAW) - EQF Level 5",
 			"center": "Institut Tecnològic de Barcelona",
-			"period": "Sep 2023 - May 2026",
+			"period": "Sep 2023 - Jun 2026",
 			"description": "Official program covering frontend and backend development, databases, deployment, and agile methodologies. The core of my current technical profile.",
 			"badge": "Completed",
 			"featured": true

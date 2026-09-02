@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro'
 import OpenAI from 'openai'
 import { chatbotProfile } from '../data/chatbot-profile'
+import { readEnv } from './env'
 
 type ChatMessage = {
 	role: 'user' | 'assistant'
@@ -32,9 +33,7 @@ function sanitizeMessages(messages: unknown): ChatMessage[] {
 
 export const POST: APIRoute = async ({ request }) => {
 	const apiKey =
-		import.meta.env.OPENAI_API_KEY ??
-		import.meta.env.OPEN_AI_KEY ??
-		import.meta.env.API_KEY_CHATGPT
+		readEnv('OPENAI_API_KEY') ?? readEnv('OPEN_AI_KEY') ?? readEnv('API_KEY_CHATGPT')
 
 	if (!apiKey) {
 		return new Response(
@@ -71,7 +70,7 @@ export const POST: APIRoute = async ({ request }) => {
 
 	try {
 		const response = await openai.responses.create({
-			model: import.meta.env.OPENAI_CHAT_MODEL ?? 'gpt-5.4-mini',
+			model: readEnv('OPENAI_CHAT_MODEL') ?? 'gpt-5.4-mini',
 			instructions:
 				`Eres MartiMate, el asistente virtual del portfolio personal de Martí Vilàs. ` +
 				`Responde en ${locale === 'en' ? 'ingles' : 'espanol'} salvo que el usuario pida otro idioma. ` +
