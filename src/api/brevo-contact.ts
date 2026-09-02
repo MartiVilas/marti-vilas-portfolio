@@ -8,6 +8,19 @@ const DEFAULT_NOTIFICATION_EMAIL = "marti.vilas14@gmail.com";
 const DEFAULT_SENDER_NAME = "Martí Vilàs";
 const DEFAULT_CONFIRMATION_TEMPLATE_ID = 1;
 
+// Read config at request time, not build time. `import.meta.env.SOME_KEY` is
+// statically inlined by Vite, so a variable that only exists at runtime (set in
+// the Vercel dashboard) compiles to `undefined` and the whole route gets
+// tree-shaken away. Dynamic lookups are never inlined.
+function readEnv(key: string) {
+	const runtimeEnv = process.env as Record<string, string | undefined>;
+	const buildEnv = import.meta.env as unknown as Record<string, string | undefined>;
+	const value = runtimeEnv[key] ?? buildEnv[key];
+	const trimmed = typeof value === "string" ? value.trim() : "";
+
+	return trimmed === "" ? undefined : trimmed;
+}
+
 function jsonResponse(body: unknown, status = 200) {
 	return new Response(JSON.stringify(body), {
 		status,
@@ -66,9 +79,9 @@ async function sendNotificationEmail({
 	email: string;
 	message: string;
 }) {
-	const notificationEmail = import.meta.env.BREVO_NOTIFICATION_EMAIL ?? DEFAULT_NOTIFICATION_EMAIL;
-	const senderEmail = import.meta.env.BREVO_SENDER_EMAIL ?? notificationEmail;
-	const senderName = import.meta.env.BREVO_SENDER_NAME ?? DEFAULT_SENDER_NAME;
+	const notificationEmail = readEnv("BREVO_NOTIFICATION_EMAIL") ?? DEFAULT_NOTIFICATION_EMAIL;
+	const senderEmail = readEnv("BREVO_SENDER_EMAIL") ?? notificationEmail;
+	const senderName = readEnv("BREVO_SENDER_NAME") ?? DEFAULT_SENDER_NAME;
 	const safeName = escapeHtml(name);
 	const safeEmail = escapeHtml(email);
 	const safeMessage = escapeHtml(message || "Sin mensaje").replaceAll("\n", "<br />");
@@ -124,8 +137,8 @@ async function sendConfirmationEmail({
 	message: string;
 	portfolioUrl: string;
 }) {
-	const templateId = Number(import.meta.env.BREVO_CONFIRMATION_TEMPLATE_ID ?? DEFAULT_CONFIRMATION_TEMPLATE_ID);
-	const senderName = import.meta.env.BREVO_SENDER_NAME ?? DEFAULT_SENDER_NAME;
+	const templateId = Number(readEnv("BREVO_CONFIRMATION_TEMPLATE_ID") ?? DEFAULT_CONFIRMATION_TEMPLATE_ID);
+	const senderName = readEnv("BREVO_SENDER_NAME") ?? DEFAULT_SENDER_NAME;
 	const subject = message || "Consulta desde el portfolio";
 
 	return fetch(BREVO_TRANSACTIONAL_EMAIL_ENDPOINT, {
@@ -154,7 +167,7 @@ async function sendConfirmationEmail({
 }
 
 export const POST: APIRoute = async ({ request }) => {
-	const apiKey = import.meta.env.BREVO_API_KEY;
+	const apiKey = readEnv("BREVO_API_KEY");
 
 	if (!apiKey) {
 		console.error("BREVO_API_KEY is missing.");
@@ -176,7 +189,7 @@ export const POST: APIRoute = async ({ request }) => {
 	const email = getRequestValue(data, "email");
 	const message = getRequestValue(data, "message");
 	const consent = getRequestConsent(data);
-	const portfolioUrl = import.meta.env.BREVO_PORTFOLIO_URL ?? new URL(request.url).origin;
+	const portfolioUrl = readEnv("BREVO_PORTFOLIO_URL") ?? new URL(request.url).origin;
 
 	if (!name || !email || !consent) {
 		return jsonResponse({ message: "Missing required fields." }, 400);
@@ -188,13 +201,13 @@ export const POST: APIRoute = async ({ request }) => {
 		attributes.FNAME = name;
 	}
 
-	const messageAttribute = import.meta.env.BREVO_MESSAGE_ATTRIBUTE;
+	const messageAttribute = readEnv("BREVO_MESSAGE_ATTRIBUTE");
 
 	if (message && messageAttribute) {
 		attributes[messageAttribute] = message;
 	}
 
-	const listId = Number(import.meta.env.BREVO_LIST_ID);
+	const listId = Number(readEnv("BREVO_LIST_ID"));
 	const payload = {
 		email,
 		attributes,
