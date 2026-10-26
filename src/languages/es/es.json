@@ -42,6 +42,16 @@
 	"technologies_label": "Tecnologías de",
 	"projects": [
 		{
+			"title": "CREM · Cercle de Recerques i Estudis Mogoda",
+			"type": "WordPress · Mantenimiento",
+			"description": "Desarrollo y mantenimiento de la web del Cercle de Recerques i Estudis Mogoda, una asociación de Santa Perpètua de Mogoda dedicada a la historia, la cultura y el patrimonio local.",
+			"tools": [
+				"WordPress"
+			],
+			"image": "/crem.png",
+			"url": "https://crem-santaperpetua.cat/"
+		},
+		{
 			"title": "Momentum",
 			"type": "Aplicación personal",
 			"description": "Aplicación personal para seguir hábitos diarios, objetivos semanales y rachas, con estadísticas, calendario y copias de seguridad del historial.",
