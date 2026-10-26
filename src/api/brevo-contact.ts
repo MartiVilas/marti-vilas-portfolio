@@ -183,6 +183,30 @@ export const POST: APIRoute = async ({ request }) => {
 		return jsonResponse({ message: "Missing required fields." }, 400);
 	}
 
+	const turnstileSecret = readEnv("TURNSTILE_SECRET_KEY");
+	if (!turnstileSecret) {
+		return jsonResponse({ message: "Contact verification is not configured." }, 503);
+	}
+	const token = getRequestValue(data, "cf-turnstile-response");
+	if (!token || token.length > 2048) {
+		return jsonResponse({ message: "Please complete the verification." }, 400);
+	}
+	try {
+		const verification = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+			method: "POST",
+			body: new URLSearchParams({ secret: turnstileSecret, response: token }),
+			signal: AbortSignal.timeout(10000),
+		});
+		if (!verification.ok) throw new Error("Verification unavailable");
+		const result = await verification.json() as { success?: boolean; hostname?: string; action?: string };
+		const allowedHosts = (readEnv("TURNSTILE_ALLOWED_HOSTNAMES") ?? "martivilas.com,www.martivilas.com").split(",").map(value => value.trim());
+		if (!result.success || result.action !== "contact" || !result.hostname || !allowedHosts.includes(result.hostname)) {
+			return jsonResponse({ message: "Verification failed. Please try again." }, 400);
+		}
+	} catch {
+		return jsonResponse({ message: "Verification unavailable. Please try again." }, 503);
+	}
+
 	const attributes: Record<string, string> = {};
 
 	if (name) {

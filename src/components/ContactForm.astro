@@ -1,8 +1,12 @@
 ---
 import { defaultLocale, t, type Locale } from '../i18n';
 
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+
 const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 ---
+
+{siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
 
 <section class="contact" id="contacto" aria-labelledby="contact-title">
 	<div>
@@ -37,6 +41,7 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 			<span>{t('contact_consent_label', locale)}</span>
 		</label>
 		<input class="honeypot" name="website" type="text" tabindex="-1" autocomplete="off" />
+		{siteKey && <div class="cf-turnstile full" data-sitekey={siteKey} data-action="contact" data-size="flexible" data-language={locale}></div>}
 		<div class="form-footer full">
 			<p class="status" data-contact-status aria-live="polite"></p>
 			<button type="submit">{t('contact_submit_button', locale)}</button>
@@ -75,6 +80,7 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 						message: formData.get("message"),
 						consent: formData.get("consent") === "on",
 						website: formData.get("website"),
+						"cf-turnstile-response": formData.get("cf-turnstile-response"),
 					}),
 				});
 
@@ -85,6 +91,9 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 			} catch {
 				if (status) status.textContent = errorMessage;
 			} finally {
+				const turnstile = (window as unknown as { turnstile?: { reset: (container: HTMLElement) => void } }).turnstile;
+				const widget = form.querySelector<HTMLElement>(".cf-turnstile");
+				if (widget && turnstile) turnstile.reset(widget);
 				if (button instanceof HTMLButtonElement) button.disabled = false;
 			}
 		});
