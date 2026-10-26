@@ -42,18 +42,40 @@
 	"technologies_label": "Technologies for",
 	"projects": [
 		{
+			"title": "Momentum",
+			"type": "Personal app",
+			"description": "Personal app for tracking daily habits, weekly goals and streaks, with statistics, a calendar and history backups.",
+			"tools": [
+				"HTML",
+				"CSS",
+				"JavaScript"
+			],
+			"image": "/momentum.png",
+			"url": "https://momentum-martivilas.netlify.app/"
+		},
+		{
 			"title": "Team Pokédex",
 			"type": "PokeAPI CRUD",
 			"description": "Application for searching Pokémon through PokeAPI, viewing key stats, and managing a custom team.",
-			"tools": ["HTML", "CSS", "JavaScript", "API"],
+			"tools": [
+				"HTML",
+				"CSS",
+				"JavaScript",
+				"API"
+			],
 			"image": "/pokeApi.png",
 			"url": "https://github.com/MartiVilas/PokeApi"
 		},
 		{
-			"title": "Task Manager",
+			"title": "Fabriqer",
 			"type": "Product",
 			"description": "Software for automating machining quotes from 3D files, calculating materials, times, and costs to generate offers ready to send.",
-			"tools": ["TypeScript", "React", "UI", "UX"],
+			"tools": [
+				"TypeScript",
+				"React",
+				"UI",
+				"UX"
+			],
 			"image": "/fabriqer-login.svg",
 			"url": "https://app.fabriqer.com/login"
 		},
@@ -61,7 +83,12 @@
 			"title": "Commercial Landing Page",
 			"type": "Web",
 			"description": "Website for a podcast recording studio in Barcelona offering sessions with audio, video, lighting, and a technician included.",
-			"tools": ["HTML", "CSS", "JavaScript", "SEO"],
+			"tools": [
+				"HTML",
+				"CSS",
+				"JavaScript",
+				"SEO"
+			],
 			"image": "/estudio-podcast-barcelona.png",
 			"url": "https://estudiopodcastbarcelona.com/"
 		}
