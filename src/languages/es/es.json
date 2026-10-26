@@ -42,18 +42,40 @@
 	"technologies_label": "Tecnologías de",
 	"projects": [
 		{
+			"title": "Momentum",
+			"type": "Aplicación personal",
+			"description": "Aplicación personal para seguir hábitos diarios, objetivos semanales y rachas, con estadísticas, calendario y copias de seguridad del historial.",
+			"tools": [
+				"HTML",
+				"CSS",
+				"JavaScript"
+			],
+			"image": "/momentum.png",
+			"url": "https://momentum-martivilas.netlify.app/"
+		},
+		{
 			"title": "Pokédex de Equipo",
 			"type": "PokeAPI CRUD",
 			"description": "Aplicación para buscar Pokémon desde la PokeAPI, consultar sus datos principales y gestionar un equipo personalizado.",
-			"tools": ["HTML", "CSS", "JavaScript", "API"],
+			"tools": [
+				"HTML",
+				"CSS",
+				"JavaScript",
+				"API"
+			],
 			"image": "/pokeApi.png",
 			"url": "https://github.com/MartiVilas/PokeApi"
 		},
 		{
-			"title": "Gestor de Tareas",
+			"title": "Fabriqer",
 			"type": "Producto",
 			"description": "Software para automatizar presupuestos de mecanizado desde archivos 3D, calculando materiales, tiempos y costes para generar ofertas listas para enviar.",
-			"tools": ["TypeScript", "React", "UI", "UX"],
+			"tools": [
+				"TypeScript",
+				"React",
+				"UI",
+				"UX"
+			],
 			"image": "/fabriqer-login.svg",
 			"url": "https://app.fabriqer.com/login"
 		},
@@ -61,7 +83,12 @@
 			"title": "Landing Comercial",
 			"type": "Web",
 			"description": "Es una web de un estudio de grabación de podcasts en Barcelona que ofrece sesiones con audio, vídeo, iluminación y técnico incluidos.",
-			"tools": ["HTML", "CSS", "JavaScript", "SEO"],
+			"tools": [
+				"HTML",
+				"CSS",
+				"JavaScript",
+				"SEO"
+			],
 			"image": "/estudio-podcast-barcelona.png",
 			"url": "https://estudiopodcastbarcelona.com/"
 		}
