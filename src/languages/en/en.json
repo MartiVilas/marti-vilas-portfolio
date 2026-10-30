@@ -53,12 +53,15 @@
 		},
 		{
 			"title": "Momentum",
-			"type": "Personal app",
-			"description": "Personal app for tracking daily habits, weekly goals and streaks, with statistics, a calendar and history backups.",
+			"type": "Habits, workouts & nutrition app",
+			"description": "Installable web app for managing habits, daily and weekly goals, appointments and one-off tasks, with a calendar and statistics. Create routines, log weights for each set and track workout progress; record meals and estimate macros with AI from photos or descriptions, correcting quantities and values before saving. Includes private syncing across devices. Planned next step: a native mobile app with widgets and workout tracking on the lock screen.",
 			"tools": [
 				"HTML",
 				"CSS",
-				"JavaScript"
+				"JavaScript",
+				"Supabase",
+				"OpenAI",
+				"Netlify"
 			],
 			"image": "/momentum.png",
 			"url": "https://momentum-martivilas.netlify.app/"

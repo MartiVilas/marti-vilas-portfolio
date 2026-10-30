@@ -53,12 +53,15 @@
 		},
 		{
 			"title": "Momentum",
-			"type": "Aplicación personal",
-			"description": "Aplicación personal para seguir hábitos diarios, objetivos semanales y rachas, con estadísticas, calendario y copias de seguridad del historial.",
+			"type": "App de hábitos, entreno y alimentación",
+			"description": "Aplicación web instalable para gestionar hábitos, objetivos diarios y semanales, citas y tareas puntuales, con calendario y estadísticas. Permite crear rutinas, registrar pesos por serie y consultar la evolución de los entrenamientos; también llevar las comidas y estimar macros con IA a partir de fotos o descripciones, corrigiendo cantidades y valores antes de guardar. Incluye sincronización privada entre dispositivos. Próxima evolución: una aplicación nativa para móvil, con widgets y seguimiento del entreno en la pantalla de bloqueo.",
 			"tools": [
 				"HTML",
 				"CSS",
-				"JavaScript"
+				"JavaScript",
+				"Supabase",
+				"OpenAI",
+				"Netlify"
 			],
 			"image": "/momentum.png",
 			"url": "https://momentum-martivilas.netlify.app/"

@@ -32,6 +32,7 @@ Idiomas:
 - Ingles: nivel B2 del MCER, acreditado con titulo de Cambridge.
 
 Proyectos destacados del portfolio:
+- Momentum: aplicacion web instalable (PWA) personal de habitos, objetivos diarios y semanales, citas y tareas puntuales con calendario y estadisticas. Permite crear rutinas de gimnasio, registrar pesos y repeticiones por serie, cronometrar sesiones y ver la evolucion; registrar comidas y estimar macros con IA desde fotos o descripciones, revisando y corrigiendo cantidades antes de guardar. Sincronizacion privada entre dispositivos con Supabase; frontend HTML, CSS y JavaScript, funciones en Netlify e IA de OpenAI. Esta disponible como web; la futura version nativa para movil, con widgets y seguimiento del entreno en pantalla de bloqueo, esta prevista y aun no se presenta como publicada. URL: https://momentum-martivilas.netlify.app/.
 - Pokedex de Equipo: aplicacion CRUD sobre la PokeAPI para buscar Pokemon, consultar sus datos principales y gestionar un equipo personalizado. Hecha con HTML, CSS, JavaScript y consumo de API.
 - Gestor de Tareas: aplicacion para organizar tareas, priorizar entregas y mantener un flujo limpio.
 - Landing Comercial: pagina enfocada a conversion con bloques de valor, prueba social y llamadas a la accion claras.
