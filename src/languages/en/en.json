@@ -14,7 +14,7 @@
 	"language_selector": "Language selector",
 	"personal_portfolio": "Frontend / Full-Stack Developer",
 	"projects_button": "View projects",
-	"cv_button": "Download CV (English)",
+	"cv_button": "Download CV",
 	"quick_summary": "Quick summary",
 	"social_links_label": "Social links",
 	"social_links": [
@@ -39,7 +39,7 @@
 	"cv_label": "CV",
 	"professional_profile_title": "Professional profile",
 	"contact_button": "Contact",
-	"download_cv_button": "Download CV (English)",
+	"download_cv_button": "Download CV",
 	"contact_label": "Contact",
 	"contact_title": "Let's talk about your next project",
 	"contact_summary": "Tell me what you have in mind and I will get back to you as soon as possible.",

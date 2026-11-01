@@ -25,7 +25,7 @@ for (const [path, locale] of [
   const links = [
     ...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*download[^>]*>/g),
   ].map((m) => m[1]);
-  assert.ok(links.length >= 3);
+  assert.ok(links.length >= 2);
   for (const link of new Set(links)) {
     const r = await fetch(new URL(link, base));
     assert.equal(r.status, 200);

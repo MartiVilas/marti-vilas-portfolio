@@ -27,7 +27,7 @@ const socialLinks = t('social_links', locale);
 				<h1 id="hero-title">{t('personal_name', locale)}</h1>
 				<p>{t('introduction_text', locale)}</p>
 				<div class="hero-actions">
-					<a href={cvFile} class="primary" download>{locale === 'en' ? 'Download CV (English)' : 'Descargar CV (inglés)'}</a>
+					<a href={cvFile} class="primary" download>{t('download_cv_button', locale)}</a>
 					<a href="#experiencia">{t('experience_link', locale)}</a>
 					<nav class="social-links" aria-label={t('social_links_label', locale)}>
 						{socialLinks.map((link) => (
