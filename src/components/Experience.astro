@@ -17,6 +17,7 @@ const experiences = t('experiences', locale);
 						<h3>{experience.role}</h3>
 						<p class="place">{experience.place}</p>
 						<p>{experience.description}</p>
+						{experience.bullets.length > 0 && <ul>{experience.bullets.map(item => <li>{item}</li>)}</ul>}
 					</div>
 				</article>
 			))
@@ -83,6 +84,8 @@ const experiences = t('experiences', locale);
 		line-height: 1.65;
 	}
 
+	ul { padding-left: 1.2rem; color: var(--color-text-muted); line-height: 1.65; margin-bottom: 0; }
+	li + li { margin-top: 0.6rem; }
 	@media (max-width: 720px) {
 		.timeline-item {
 			grid-template-columns: 1fr;

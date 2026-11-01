@@ -1,8 +1,21 @@
 ---
 import "flag-icons/css/flag-icons.min.css";
+import profile from '../data/professional-profile.json';
 import { defaultLocale, t, type Locale } from '../i18n';
 
 const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+const canonical = `https://martivilas.com${locale === 'en' ? '/en/' : '/'}`;
+const structuredData = {
+ '@context': 'https://schema.org', '@type': 'ProfilePage', '@id': canonical + '#profile', url: canonical, inLanguage: locale,
+ mainEntity: { '@type': 'Person', '@id': 'https://martivilas.com/#person', name: profile.identity.name,
+  url: profile.identity.website, jobTitle: 'Frontend / Full-Stack Developer',
+  worksFor: { '@type': 'Organization', name: profile.employment.company },
+  homeLocation: { '@type': 'Place', name: profile.identity.location },
+  sameAs: [profile.identity.github, profile.identity.linkedin],
+  knowsAbout: ['React', 'TypeScript', 'Node.js', 'SQL', 'Web development', 'API integration'],
+  knowsLanguage: ['ca', 'es', 'en'], alumniOf: { '@type': 'EducationalOrganization', name: 'Institut Tecnològic de Barcelona' }
+ }
+};
 ---
 
 <!doctype html>
@@ -17,12 +30,31 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 			content={t('meta_description', locale)}
 		/>
 		<title>{t('page_title', locale)}</title>
+        <link rel="canonical" href={canonical} />
+        <link rel="alternate" hreflang="es" href="https://martivilas.com/" />
+        <link rel="alternate" hreflang="en" href="https://martivilas.com/en/" />
+        <link rel="alternate" hreflang="x-default" href="https://martivilas.com/en/" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content={t('page_title', locale)} />
+        <meta property="og:description" content={t('meta_description', locale)} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:locale" content={locale === 'en' ? 'en_GB' : 'es_ES'} />
+        <meta property="og:locale:alternate" content={locale === 'en' ? 'es_ES' : 'en_GB'} />
+        <meta property="og:image" content="https://martivilas.com/Logo-marti.jpeg" />
+        <meta property="og:image:alt" content="Martí Vilàs" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={t('page_title', locale)} />
+        <meta name="twitter:description" content={t('meta_description', locale)} />
+        <meta name="twitter:image" content="https://martivilas.com/Logo-marti.jpeg" />
+        <script type="application/ld+json" set:html={JSON.stringify(structuredData).replaceAll('<', '\u003c')} />
 		<script is:inline>
-			const savedTheme = localStorage.getItem('theme');
+			let savedTheme = null;
+            try { savedTheme = localStorage.getItem('theme'); } catch {}
 			document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
 		</script>
 	</head>
 	<body>
+        <a class="skip-link" href="#inicio">{t('skip_content', locale)}</a>
 		<slot />
 	</body>
 </html>
@@ -68,13 +100,13 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 		--color-card-alt: #f1f7ff;
 		--color-primary: #2563eb;
 		--color-primary-hover: #1d4ed8;
-		--color-accent: #0284c7;
+		--color-accent: #0369a1;
 		--color-accent-rgb: 2, 132, 199;
 		--color-accent-soft: #dbeafe;
 		--color-text: #0f172a;
 		--color-text-muted: #475569;
 		--color-border: #d7e5f5;
-		--color-success: #22c55e;
+		--color-success: #15803d;
 		--color-button-text: #ffffff;
 		--color-shadow: rgba(15, 23, 42, 0.08);
 		--color-shadow-strong: rgba(15, 23, 42, 0.16);
@@ -86,6 +118,11 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 		--color-chat-bg: rgba(255, 255, 255, 0.98);
 	}
 
+	:global(:focus-visible) { outline: 3px solid var(--color-accent); outline-offset: 4px; }
+	:global(section[id]) { scroll-margin-top: 170px; }
+	.skip-link { position: fixed; top: -100px; left: 1rem; z-index: 100; padding: 1rem; background: var(--color-bg-secondary); color: var(--color-text); }
+	.skip-link:focus { top: 1rem; }
+	@media (prefers-reduced-motion: reduce) { :global(*), :global(*::before), :global(*::after) { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
 	html,
 	body {
 		margin: 0;
@@ -104,7 +141,7 @@ const { locale = defaultLocale } = Astro.props as { locale?: Locale };
 		overflow-x: hidden;
 	}
 
-	* {
+	:global(*) {
 		box-sizing: border-box;
 	}
 

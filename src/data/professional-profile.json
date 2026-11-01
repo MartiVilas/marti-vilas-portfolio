@@ -1,0 +1,577 @@
+{
+  "identity": {
+    "name": "Martí Vilàs Ruano",
+    "displayName": "Martí Vilàs",
+    "location": "Barcelona, Spain",
+    "email": "marti.vilas14@gmail.com",
+    "phone": "+34 692 233 320",
+    "website": "https://martivilas.com",
+    "github": "https://github.com/MartiVilas",
+    "linkedin": "https://www.linkedin.com/in/mart%C3%AD-vil%C3%A0s-b51a63212/"
+  },
+  "employment": {
+    "company": "I-MAS",
+    "start": "2025-09",
+    "permanentSince": "2026-06"
+  },
+  "locales": {
+    "en": {
+      "personal_name": "Martí Vilàs",
+      "introduction_text": "Frontend / full-stack developer at I-MAS since September 2025. I build production web applications with React, TypeScript and Node.js, from understanding the problem to implementation and code review.",
+      "availability_text": "Based in Barcelona. Interested in English-speaking teams in Denmark and Switzerland.",
+      "technology_stack": "React · TypeScript · Node.js · SQL",
+      "synopsis_title": "From a functional problem to working software.",
+      "synopsis_text": "At I-MAS, I investigate functional needs, assess technical options and implement frontend and backend changes. I integrate them into an existing codebase, submit merge requests and improve the solution through feedback from the team and tech lead.",
+      "portfolio_summary": "My work includes APIs, business logic, database structures and relationships, and frontend integration with AI services in industrial software. I also review other developers’ merge requests. The projects below distinguish professional contributions from personal work.",
+      "spoken_languages": [
+        {
+          "name": "Catalan",
+          "level": "Native",
+          "flag": "fi-es-ct"
+        },
+        {
+          "name": "Spanish",
+          "level": "Native",
+          "flag": "fi-es"
+        },
+        {
+          "name": "English",
+          "level": "B2 (Cambridge)",
+          "flag": "fi-gb"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Industrial DFM software · AI integration",
+          "type": "Professional contribution · I-MAS",
+          "description": "Team contribution to a Design for Manufacturability (DFM) application: frontend development and integration of a viewer, analysis features and AI service APIs. My responsibility focuses on connecting these features within the application.",
+          "tools": [
+            "Frontend",
+            "API",
+            "AI integration"
+          ],
+          "role": "Frontend development and service integration",
+          "context": "Industrial workflows",
+          "result": "Integrated features within a professional application; client and internal implementation details omitted.",
+          "image": "",
+          "url": "",
+          "cvOrder": 1,
+          "cvDescription": "Frontend development and integration of a viewer, analysis features and AI service APIs within a team-built industrial application."
+        },
+        {
+          "title": "Fabriqer",
+          "type": "Professional product",
+          "description": "Software for automating machining quotes from 3D files, calculating materials, times, and costs to generate offers ready to send.",
+          "tools": [
+            "TypeScript",
+            "React",
+            "UI",
+            "UX"
+          ],
+          "image": "/fabriqer-login.svg",
+          "url": "https://app.fabriqer.com/login",
+          "role": "",
+          "context": "",
+          "result": "",
+          "cvOrder": 0,
+          "cvDescription": ""
+        },
+        {
+          "title": "Momentum",
+          "type": "Personal project · PWA",
+          "description": "Create routines, log weights and repetitions per set, track workout progress and register meals. AI estimates macros from photos or text, with editable quantities before saving. Includes dated tasks, statistics and a calendar.",
+          "tools": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Supabase",
+            "OpenAI",
+            "Netlify"
+          ],
+          "image": "/momentum.png",
+          "url": "https://momentum-martivilas.netlify.app/",
+          "role": "Application development and deployment",
+          "context": "Habits, strength training and nutrition in one place.",
+          "result": "Installable web app with private syncing. Native mobile app, widgets and lock-screen workout tracking planned.",
+          "cvOrder": 2,
+          "cvDescription": "Installable habit, workout and nutrition app. Private account sync, per-set training logs and editable AI macro estimates. HTML, CSS, JavaScript, Supabase, OpenAI API, Netlify."
+        },
+        {
+          "title": "CREM · Cercle de Recerques i Estudis Mogoda",
+          "type": "WordPress · Maintenance",
+          "description": "Development and ongoing maintenance of the website for Cercle de Recerques i Estudis Mogoda, an association in Santa Perpètua de Mogoda focused on local history, culture and heritage.",
+          "tools": [
+            "WordPress"
+          ],
+          "image": "/crem.png",
+          "url": "https://crem-santaperpetua.cat/",
+          "role": "",
+          "context": "",
+          "result": "",
+          "cvOrder": 0,
+          "cvDescription": ""
+        },
+        {
+          "title": "Commercial Landing Page",
+          "type": "Web",
+          "description": "Website for a podcast recording studio in Barcelona offering sessions with audio, video, lighting, and a technician included.",
+          "tools": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "SEO"
+          ],
+          "image": "/estudio-podcast-barcelona.png",
+          "url": "https://estudiopodcastbarcelona.com/",
+          "role": "",
+          "context": "",
+          "result": "",
+          "cvOrder": 0,
+          "cvDescription": ""
+        },
+        {
+          "title": "Team Pokédex",
+          "type": "Learning project · API CRUD",
+          "description": "Application for searching Pokémon through PokeAPI, viewing key stats, and managing a custom team.",
+          "tools": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "API"
+          ],
+          "image": "/pokeApi.png",
+          "url": "https://github.com/MartiVilas/PokeApi",
+          "role": "",
+          "context": "",
+          "result": "",
+          "cvOrder": 0,
+          "cvDescription": ""
+        },
+        {
+          "title": "Media catalogue app",
+          "type": "Personal / learning project",
+          "description": "MyAnimeList-style mobile application built with Vue.js and Quasar: list management, search and multimedia content tracking.",
+          "tools": [
+            "Vue.js",
+            "Quasar"
+          ],
+          "image": "",
+          "url": "",
+          "role": "Application development",
+          "context": "",
+          "result": "",
+          "cvOrder": 0,
+          "cvDescription": ""
+        },
+        {
+          "title": "Portfolio - martivilas.com",
+          "type": "Personal project",
+          "description": "Bilingual Astro website with server-side API integrations.",
+          "tools": [
+            "Astro"
+          ],
+          "image": "",
+          "url": "https://martivilas.com",
+          "role": "Development and maintenance",
+          "context": "",
+          "result": "",
+          "cvOrder": 3,
+          "cvDescription": ""
+        }
+      ],
+      "cv_summary": "Frontend / full-stack developer at I-MAS since September 2025, building production applications with React, TypeScript and Node.js. I investigate functional requirements and implement frontend, API and database changes, with team code review and tech lead support. Experience integrating AI services into industrial software.",
+      "cv_highlights": [
+        "React and TypeScript interfaces; state management with Zustand.",
+        "Node.js APIs, business logic and relational database structures.",
+        "Independent implementation, merge requests and peer code reviews.",
+        "Frontend integration with AI services in industrial software."
+      ],
+      "experiences": [
+        {
+          "role": "Web Developer - Frontend / Full-Stack",
+          "place": "I-MAS",
+          "period": "Sep 2025 - Present (permanent since Jun 2026)",
+          "description": "Joined as an intern in September 2025; permanent contract since June 2026. Production client applications, working with team review and tech lead support.",
+          "bullets": [
+            "Investigate functional needs, assess technical options and implement solutions independently within an existing codebase.",
+            "Build React and TypeScript interfaces with Zustand, plus Node.js APIs, business logic, database structures and relationships.",
+            "Integrate frontend features with APIs and AI services in industrial software, in collaboration with the development team.",
+            "Submit merge requests, review peers’ code and incorporate feedback. Work in Scrum / Agile; deploy and configure client WordPress pages."
+          ]
+        },
+        {
+          "role": "Textile Sales Associate",
+          "place": "IKEA (Sabadell)",
+          "period": "Jun-Sep 2024 / Jun-Sep 2025",
+          "description": "Customer service, query handling, and stock management within the section.",
+          "bullets": []
+        },
+        {
+          "role": "Warehouse Operative",
+          "place": "Mango / Punto Fa S.L. (Lliçà d'Amunt)",
+          "period": "Aug 2021 - Aug 2023",
+          "description": "Packaging, garment distribution, and warehouse organization.",
+          "bullets": []
+        },
+        {
+          "role": "Sports Coach / Activity Leader",
+          "place": "Escola Sant Gervasi (Mollet del Vallès)",
+          "period": "Sep 2019 - 2022",
+          "description": "Extracurricular basketball coach for students aged 9 to 11.",
+          "bullets": []
+        }
+      ],
+      "studies": [
+        {
+          "title": "Higher Diploma in Web Application Development (DAW) - EQF Level 5",
+          "center": "Institut Tecnològic de Barcelona",
+          "period": "Sep 2023 - Jun 2026",
+          "description": "Official program covering frontend and backend development, databases, deployment, and agile methodologies. The core of my current technical profile.",
+          "badge": "Completed",
+          "featured": true
+        },
+        {
+          "title": "Spanish Baccalaureate - Social Sciences & Economics",
+          "center": "I.E.S Rovira-Forns / Escola Sant Gervasi",
+          "period": "Sep 2019 - Jun 2022",
+          "badge": "Completed",
+          "featured": true
+        }
+      ],
+      "professional_role": "Frontend / Full-Stack Developer",
+      "technical_skills": [
+        {
+          "label": "Frontend",
+          "values": [
+            "React",
+            "TypeScript",
+            "JavaScript",
+            "HTML5",
+            "CSS3",
+            "Zustand",
+            "Vue.js",
+            "Quasar",
+            "Astro"
+          ]
+        },
+        {
+          "label": "Backend & data",
+          "values": [
+            "Node.js",
+            "TypeScript",
+            "PHP",
+            "SQL",
+            "MySQL"
+          ]
+        },
+        {
+          "label": "Delivery & collaboration",
+          "values": [
+            "Git",
+            "Merge requests",
+            "Code review",
+            "Scrum / Agile",
+            "WordPress"
+          ]
+        },
+        {
+          "label": "Personal projects / additional",
+          "values": [
+            "Supabase",
+            "OpenAI API",
+            "Netlify",
+            "Kotlin"
+          ]
+        }
+      ],
+      "cv_sections": {
+        "summary": "Professional Summary",
+        "skills": "Technical Skills",
+        "experience": "Professional Experience",
+        "projects": "Selected Projects",
+        "education": "Education",
+        "languages": "Languages",
+        "other": "Additional experience"
+      }
+    },
+    "es": {
+      "personal_name": "Martí Vilàs",
+      "introduction_text": "Desarrollador frontend / full-stack en I-MAS desde septiembre de 2025. Desarrollo aplicaciones web en producción con React, TypeScript y Node.js, desde entender el problema hasta implementar la solución y revisar código.",
+      "availability_text": "Desde Barcelona. Interés en equipos internacionales que trabajen en inglés, especialmente en Dinamarca y Suiza.",
+      "technology_stack": "React · TypeScript · Node.js · SQL",
+      "synopsis_title": "Del problema funcional al software que lo resuelve.",
+      "synopsis_text": "En I-MAS investigo necesidades funcionales, valoro alternativas técnicas e implemento cambios de frontend y backend. Los integro en el código existente, preparo merge requests y mejoro la solución con el feedback del equipo y del tech lead.",
+      "portfolio_summary": "Mi trabajo incluye APIs, lógica de negocio, estructuras y relaciones de bases de datos e integración frontend con servicios de IA en software industrial. También reviso merge requests de otros desarrolladores. Los proyectos distinguen contribuciones profesionales de trabajo personal.",
+      "spoken_languages": [
+        {
+          "name": "Catalán",
+          "level": "Nativo",
+          "flag": "fi-es-ct"
+        },
+        {
+          "name": "Castellano",
+          "level": "Nativo",
+          "flag": "fi-es"
+        },
+        {
+          "name": "Inglés",
+          "level": "B2 (Cambridge)",
+          "flag": "fi-gb"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Software industrial DFM · integración de IA",
+          "type": "Contribución profesional · I-MAS",
+          "description": "Contribución en equipo a una aplicación de análisis de fabricabilidad (DFM): desarrollo frontend e integración de un visualizador, funciones de análisis y APIs de servicios de IA. Mi responsabilidad se centra en conectar estas funcionalidades dentro de la aplicación.",
+          "tools": [
+            "Frontend",
+            "API",
+            "AI integration"
+          ],
+          "role": "Desarrollo frontend e integración de servicios",
+          "context": "Flujos de trabajo industriales",
+          "result": "Funcionalidades integradas en una aplicación profesional; se omiten clientes y detalles internos.",
+          "image": "",
+          "url": "",
+          "cvOrder": 1,
+          "cvDescription": "Desarrollo frontend e integración de un visualizador, funciones de análisis y APIs de servicios de IA en una aplicación industrial desarrollada en equipo."
+        },
+        {
+          "title": "Fabriqer",
+          "type": "Producto profesional",
+          "description": "Software para automatizar presupuestos de mecanizado desde archivos 3D, calculando materiales, tiempos y costes para generar ofertas listas para enviar.",
+          "tools": [
+            "TypeScript",
+            "React",
+            "UI",
+            "UX"
+          ],
+          "image": "/fabriqer-login.svg",
+          "url": "https://app.fabriqer.com/login",
+          "role": "",
+          "context": "",
+          "result": "",
+          "cvOrder": 0,
+          "cvDescription": ""
+        },
+        {
+          "title": "Momentum",
+          "type": "Proyecto personal · PWA",
+          "description": "Crear rutinas, registrar pesos y repeticiones por serie, consultar la evolución y apuntar comidas. La IA estima macros desde fotos o texto, con cantidades editables antes de guardar. Incluye tareas puntuales, estadísticas y calendario.",
+          "tools": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Supabase",
+            "OpenAI",
+            "Netlify"
+          ],
+          "image": "/momentum.png",
+          "url": "https://momentum-martivilas.netlify.app/",
+          "role": "Desarrollo y despliegue de la aplicación",
+          "context": "Hábitos, entreno de fuerza y alimentación en un solo lugar.",
+          "result": "Web instalable con sincronización privada. App nativa móvil, widgets y seguimiento del entreno en pantalla de bloqueo previstos.",
+          "cvOrder": 2,
+          "cvDescription": "App instalable de hábitos, entreno y alimentación. Sincronización privada, registro por serie y estimaciones de macros con IA editables. HTML, CSS, JavaScript, Supabase, OpenAI API y Netlify."
+        },
+        {
+          "title": "CREM · Cercle de Recerques i Estudis Mogoda",
+          "type": "WordPress · Mantenimiento",
+          "description": "Desarrollo y mantenimiento de la web del Cercle de Recerques i Estudis Mogoda, una asociación de Santa Perpètua de Mogoda dedicada a la historia, la cultura y el patrimonio local.",
+          "tools": [
+            "WordPress"
+          ],
+          "image": "/crem.png",
+          "url": "https://crem-santaperpetua.cat/",
+          "role": "",
+          "context": "",
+          "result": "",
+          "cvOrder": 0,
+          "cvDescription": ""
+        },
+        {
+          "title": "Landing Comercial",
+          "type": "Web",
+          "description": "Es una web de un estudio de grabación de podcasts en Barcelona que ofrece sesiones con audio, vídeo, iluminación y técnico incluidos.",
+          "tools": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "SEO"
+          ],
+          "image": "/estudio-podcast-barcelona.png",
+          "url": "https://estudiopodcastbarcelona.com/",
+          "role": "",
+          "context": "",
+          "result": "",
+          "cvOrder": 0,
+          "cvDescription": ""
+        },
+        {
+          "title": "Pokédex de Equipo",
+          "type": "Proyecto formativo · API CRUD",
+          "description": "Aplicación para buscar Pokémon desde la PokeAPI, consultar sus datos principales y gestionar un equipo personalizado.",
+          "tools": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "API"
+          ],
+          "image": "/pokeApi.png",
+          "url": "https://github.com/MartiVilas/PokeApi",
+          "role": "",
+          "context": "",
+          "result": "",
+          "cvOrder": 0,
+          "cvDescription": ""
+        },
+        {
+          "title": "App de catálogo multimedia",
+          "type": "Proyecto personal / formativo",
+          "description": "Aplicación móvil estilo MyAnimeList con Vue.js y Quasar: gestión de listas, búsqueda y seguimiento de contenido multimedia.",
+          "tools": [
+            "Vue.js",
+            "Quasar"
+          ],
+          "image": "",
+          "url": "",
+          "role": "Desarrollo de la aplicación",
+          "context": "",
+          "result": "",
+          "cvOrder": 0,
+          "cvDescription": ""
+        },
+        {
+          "title": "Portfolio - martivilas.com",
+          "type": "Proyecto personal",
+          "description": "Web bilingüe en Astro con integraciones mediante APIs de servidor.",
+          "tools": [
+            "Astro"
+          ],
+          "image": "",
+          "url": "https://martivilas.com",
+          "role": "Desarrollo y mantenimiento",
+          "context": "",
+          "result": "",
+          "cvOrder": 3,
+          "cvDescription": ""
+        }
+      ],
+      "cv_summary": "Desarrollador frontend / full-stack en I-MAS desde septiembre de 2025, con aplicaciones en producción en React, TypeScript y Node.js. Investigo necesidades e implemento cambios de frontend, APIs y bases de datos, con revisión del equipo y apoyo del tech lead. Experiencia integrando servicios de IA en software industrial.",
+      "cv_highlights": [
+        "Interfaces con React y TypeScript; gestión de estado con Zustand.",
+        "APIs con Node.js, lógica de negocio y estructuras de bases de datos relacionales.",
+        "Implementación autónoma, merge requests y revisión de código de compañeros.",
+        "Integración frontend con servicios de IA en software industrial."
+      ],
+      "experiences": [
+        {
+          "role": "Desarrollador web - Frontend / full-stack",
+          "place": "I-MAS",
+          "period": "Sep 2025 - Actualidad (indefinido desde Jun 2026)",
+          "description": "Incorporación en prácticas en septiembre de 2025; contrato indefinido desde junio de 2026. Aplicaciones de cliente en producción, con revisión del equipo y apoyo del tech lead.",
+          "bullets": [
+            "Investigar necesidades funcionales, valorar alternativas e implementar soluciones de forma autónoma en el código existente.",
+            "Desarrollar interfaces con React, TypeScript y Zustand; APIs con Node.js, lógica de negocio y estructuras y relaciones de bases de datos.",
+            "Integrar funcionalidades frontend con APIs y servicios de IA en software industrial, junto al equipo de desarrollo.",
+            "Preparar merge requests, revisar código de compañeros e incorporar feedback. Trabajo con Scrum / Agile; despliegue y configuración de páginas WordPress de clientes."
+          ]
+        },
+        {
+          "role": "Vendedor Textil",
+          "place": "IKEA (Sabadell)",
+          "period": "Jun-Sep 2024 / Jun-Sep 2025",
+          "description": "Atención al cliente, resolución de dudas y gestión de stock en sección.",
+          "bullets": []
+        },
+        {
+          "role": "Mozo de Almacén",
+          "place": "Mango / Punto Fa S.L. (Lliçà d'Amunt)",
+          "period": "Ago 2021 - Ago 2023",
+          "description": "Empaquetamiento, distribución de prendas y organización de almacén.",
+          "bullets": []
+        },
+        {
+          "role": "Monitor / Dinamizador Deportivo",
+          "place": "Escola Sant Gervasi (Mollet del Vallès)",
+          "period": "Sep 2019 - 2022",
+          "description": "Monitor de baloncesto extraescolar para alumnos de 9-11 años.",
+          "bullets": []
+        }
+      ],
+      "studies": [
+        {
+          "title": "CFGS Desarrollo de Aplicaciones Web (DAW)",
+          "center": "Institut Tecnològic de Barcelona",
+          "period": "Sep 2023 - Jun 2026",
+          "description": "Formación oficial centrada en desarrollo frontend y backend, bases de datos, despliegue y metodologías ágiles. Núcleo de mi perfil técnico actual.",
+          "badge": "Finalizado",
+          "featured": true
+        },
+        {
+          "title": "Bachillerato - Rama Social-Económica",
+          "center": "I.E.S Rovira-Forns / Escola Sant Gervasi",
+          "period": "Sep 2019 - Jun 2022",
+          "badge": "Finalizado",
+          "featured": true
+        }
+      ],
+      "professional_role": "Desarrollador frontend / full-stack",
+      "technical_skills": [
+        {
+          "label": "Frontend",
+          "values": [
+            "React",
+            "TypeScript",
+            "JavaScript",
+            "HTML5",
+            "CSS3",
+            "Zustand",
+            "Vue.js",
+            "Quasar",
+            "Astro"
+          ]
+        },
+        {
+          "label": "Backend y datos",
+          "values": [
+            "Node.js",
+            "TypeScript",
+            "PHP",
+            "SQL",
+            "MySQL"
+          ]
+        },
+        {
+          "label": "Entrega y colaboración",
+          "values": [
+            "Git",
+            "Merge requests",
+            "Code review",
+            "Scrum / Agile",
+            "WordPress"
+          ]
+        },
+        {
+          "label": "Proyectos personales / adicional",
+          "values": [
+            "Supabase",
+            "OpenAI API",
+            "Netlify",
+            "Kotlin"
+          ]
+        }
+      ],
+      "cv_sections": {
+        "summary": "Perfil profesional",
+        "skills": "Competencias técnicas",
+        "experience": "Experiencia profesional",
+        "projects": "Proyectos seleccionados",
+        "education": "Formación",
+        "languages": "Idiomas",
+        "other": "Otra experiencia"
+      }
+    }
+  }
+}

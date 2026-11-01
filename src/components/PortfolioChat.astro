@@ -66,7 +66,7 @@ const labels =
 		</div>
 
 		<form class="chat-form" data-chat-form>
-			<input name="message" type="text" autocomplete="off" maxlength="700" placeholder={labels.placeholder} />
+			<input name="message" type="text" autocomplete="off" maxlength="700" aria-label={labels.placeholder} placeholder={labels.placeholder} />
 			<button type="submit">{labels.send}</button>
 		</form>
 	</div>
@@ -95,6 +95,7 @@ const labels =
 			root.classList.toggle('is-open', isOpen)
 			toggle?.setAttribute('aria-expanded', String(isOpen))
 			if (isOpen) window.setTimeout(() => input?.focus(), 0)
+			else toggle?.focus()
 		}
 
 		function cleanAnswer(content: string) {

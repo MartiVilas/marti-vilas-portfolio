@@ -20,6 +20,7 @@ const cvDownloadName = locale === 'en' ? 'Marti_Vilas_CV_EN.pdf' : 'Marti_Vilas_
 	</ul>
 	<div class="actions">
 		<a href={cvFile} class="button" download={cvDownloadName}>{t('download_cv_button', locale)}</a>
+		<a href={locale === 'en' ? cvFileEs : cvFileEn} class="button secondary" download={locale === 'en' ? 'Marti_Vilas_CV_ES.pdf' : 'Marti_Vilas_CV_EN.pdf'}>{locale === 'en' ? 'CV en español' : 'CV in English'}</a>
 	</div>
 </section>
 

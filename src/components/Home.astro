@@ -1,5 +1,6 @@
 ---
 import CV from './CV.astro';
+import cvFileEn from '../assets/CV_Marti_Vilas_EN.pdf';
 import ContactForm from './ContactForm.astro';
 import Education from './Education.astro';
 import Experience from './Experience.astro';
@@ -12,21 +13,22 @@ import Synopsis from './Synopsis.astro';
 import { defaultLocale, t, type Locale } from '../i18n';
 
 const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+const cvFile = cvFileEn;
 const socialLinks = t('social_links', locale);
 ---
 
 <Layout locale={locale}>
 	<Header locale={locale} />
 
-	<main id="inicio">
+	<main id="inicio" tabindex="-1">
 		<section class="hero" aria-labelledby="hero-title">
 			<div class="hero-copy">
-				<p class="eyebrow">{t('personal_portfolio', locale)}</p>
+				<p class="eyebrow">{t('professional_role', locale)}</p>
 				<h1 id="hero-title">{t('personal_name', locale)}</h1>
 				<p>{t('introduction_text', locale)}</p>
 				<div class="hero-actions">
-					<a href="#proyectos" class="primary">{t('projects_button', locale)}</a>
-					<a href="#cv">{t('cv_button', locale)}</a>
+					<a href={cvFile} class="primary" download>{locale === 'en' ? 'Download CV (English)' : 'Descargar CV (inglés)'}</a>
+					<a href="#experiencia">{t('experience_link', locale)}</a>
 					<nav class="social-links" aria-label={t('social_links_label', locale)}>
 						{socialLinks.map((link) => (
 							<a href={link.url} target="_blank" rel="noreferrer">
@@ -45,10 +47,10 @@ const socialLinks = t('social_links', locale);
 
 		<div class="content">
 			<Synopsis locale={locale} />
+			<Experience locale={locale} />
 			<SkillsLanguages locale={locale} />
 			<Projects locale={locale} />
 			<CV locale={locale} />
-			<Experience locale={locale} />
 			<Education locale={locale} />
 			<ContactForm locale={locale} />
 		</div>
@@ -151,6 +153,7 @@ const socialLinks = t('social_links', locale);
 		object-fit: contain;
 	}
 
+	:global(:root:not([data-theme="light"])) .social-icon[src="/github-icon.svg"] { filter: invert(1); }
 	.social-links a:hover {
 		background: var(--color-accent-soft);
 	}

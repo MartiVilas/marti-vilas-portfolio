@@ -33,6 +33,7 @@ const toolIcons: Record<string, string> = {
 						<span>{project.type}</span>
 						<h3>{project.title}</h3>
 						<p>{project.description}</p>
+						{project.role && <dl class="project-facts"><dt>{t('role_label', locale)}</dt><dd>{project.role}</dd>{project.result && <><dt>{t('result_label', locale)}</dt><dd>{project.result}</dd></>}</dl>}
 					</div>
 					{
 						'url' in project && 'image' in project && project.url && project.image && (
@@ -41,9 +42,9 @@ const toolIcons: Record<string, string> = {
 								href={project.url}
 								target="_blank"
 								rel="noreferrer"
-								aria-label={project.title}
+								aria-label={`${t('view_project', locale)}: ${project.title}`}
 							>
-								<img src={project.image} alt={project.title} loading="lazy" />
+								<img src={project.image} alt={project.title} loading="lazy" width="960" height="540" decoding="async" />
 							</a>
 						)
 					}
@@ -121,6 +122,9 @@ const toolIcons: Record<string, string> = {
 		min-height: 205px;
 	}
 
+	.project-facts { font-size: 0.9rem; line-height: 1.55; }
+	.project-facts dt { color: var(--color-text); font-weight: 700; margin-top: 0.75rem; }
+	.project-facts dd { color: var(--color-text-muted); margin: 0.2rem 0 0; }
 	.project-card:hover {
 		box-shadow: 0 18px 45px rgba(var(--color-accent-rgb), 0.16);
 	}

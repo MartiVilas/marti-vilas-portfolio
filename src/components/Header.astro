@@ -21,10 +21,10 @@ const languageLinks = [
 const currentLanguage = languageLinks.find((language) => language.locale === locale) ?? languageLinks[0];
 
 const navLinks = [
+	{ href: "#experiencia", label: t('experience_link', locale) },
 	{ href: "#skills", label: t('skills_link', locale) },
 	{ href: "#proyectos", label: t('projects_link', locale) },
 	{ href: "#cv", label: t('cv_link', locale) },
-	{ href: "#experiencia", label: t('experience_link', locale) },
 	{ href: "#estudios", label: t('education_link', locale) },
 	{ href: "#contacto", label: t('contact_link', locale) },
 ] as const;
@@ -53,7 +53,7 @@ const themeLabels =
 				<select data-language-select aria-label={t('language_selector', locale)}>
 					{languageLinks.map((language) => (
 						<option value={language.href} selected={language.locale === locale}>
-							{language.locale.toUpperCase()}
+							{language.locale === 'en' ? 'English' : 'Español'}
 						</option>
 					))}
 				</select>
@@ -100,7 +100,7 @@ const themeLabels =
 
 		function setTheme(theme: 'light' | 'dark') {
 			root.dataset.theme = theme
-			localStorage.setItem('theme', theme)
+			try { localStorage.setItem('theme', theme) } catch {}
 			const isLight = theme === 'light'
 			const label = isLight ? button.dataset.darkLabel : button.dataset.lightLabel
 			if (label) {
@@ -121,7 +121,7 @@ const themeLabels =
 
 	document.querySelectorAll<HTMLSelectElement>('[data-language-select]').forEach((select) => {
 		select.addEventListener('change', () => {
-			window.location.href = select.value
+			window.location.href = select.value + window.location.hash
 		})
 	})
 </script>
@@ -207,7 +207,7 @@ const themeLabels =
 	}
 
 	.header-language select {
-		max-width: 4.2rem;
+		max-width: 7rem;
 		border: 1px solid var(--color-border);
 		border-radius: 8px;
 		background: var(--color-header-bg);

@@ -1,7 +1,6 @@
 {
-	"meta_description": "Martí Vilàs' personal portfolio: projects, experience, education, and CV.",
-	"page_title": "Martí Vilàs | Portfolio",
-	"personal_name": "Martí Vilàs",
+	"meta_description": "Frontend / full-stack developer at I-MAS. React, TypeScript, Node.js, APIs and industrial software with AI integration. Experience, projects and English CV.",
+	"page_title": "Martí Vilàs | Frontend / Full-Stack Developer",
 	"main_navigation": "Main navigation",
 	"home_link": "Home",
 	"skills_link": "Skills",
@@ -13,111 +12,34 @@
 	"spanish_language": "Spanish",
 	"english_language": "English",
 	"language_selector": "Language selector",
-	"personal_portfolio": "Personal Portfolio",
-	"introduction_text": "Web developer focused on clean interfaces, useful products, and code that doesn't scare to maintain.",
+	"personal_portfolio": "Frontend / Full-Stack Developer",
 	"projects_button": "View projects",
-	"cv_button": "Read CV",
+	"cv_button": "Download CV (English)",
 	"quick_summary": "Quick summary",
-	"availability_text": "Available for web projects, hiring, and collaborations.",
-	"technology_stack": "Frontend · React · TypeScript · UI",
 	"social_links_label": "Social links",
 	"social_links": [
-		{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/mart%C3%AD-vil%C3%A0s-b51a63212/", "icon": "/linkedin_icon.svg" },
-		{ "label": "GitHub", "url": "https://github.com/MartiVilas", "icon": "/github-icon.svg" }
+		{
+			"label": "LinkedIn",
+			"url": "https://www.linkedin.com/in/mart%C3%AD-vil%C3%A0s-b51a63212/",
+			"icon": "/linkedin_icon.svg"
+		},
+		{
+			"label": "GitHub",
+			"url": "https://github.com/MartiVilas",
+			"icon": "/github-icon.svg"
+		}
 	],
 	"synopsis_label": "Synopsis",
-	"synopsis_title": "I build digital products with judgment, detail, and solid craft.",
-	"synopsis_text": "I am Martí Vilàs, a developer focused on creating clear, fast, and polished web experiences. I like working close to the problem: understanding what the user needs, turning it into an interface, and leaving behind a maintainable technical base.",
-	"portfolio_summary": "This portfolio brings together projects, professional experience, education, and my CV so you can quickly understand how I work.",
 	"skills_label": "Skills",
 	"skills_title": "Skills & languages",
 	"spoken_languages_label": "Languages",
-	"spoken_languages": [
-		{ "name": "Catalan", "level": "Native", "flag": "fi-es-ct" },
-		{ "name": "Spanish", "level": "Native", "flag": "fi-es" },
-		{ "name": "English", "level": "B2", "flag": "fi-gb" }
-	],
 	"projects_label": "Projects",
-	"recent_work_title": "Recent work",
+	"recent_work_title": "Selected work",
 	"technologies_label": "Technologies for",
-	"projects": [
-		{
-			"title": "CREM · Cercle de Recerques i Estudis Mogoda",
-			"type": "WordPress · Maintenance",
-			"description": "Development and ongoing maintenance of the website for Cercle de Recerques i Estudis Mogoda, an association in Santa Perpètua de Mogoda focused on local history, culture and heritage.",
-			"tools": [
-				"WordPress"
-			],
-			"image": "/crem.png",
-			"url": "https://crem-santaperpetua.cat/"
-		},
-		{
-			"title": "Momentum",
-			"type": "Habits, workouts & nutrition app",
-			"description": "Installable web app for managing habits, daily and weekly goals, appointments and one-off tasks, with a calendar and statistics. Create routines, log weights for each set and track workout progress; record meals and estimate macros with AI from photos or descriptions, correcting quantities and values before saving. Includes private syncing across devices. Planned next step: a native mobile app with widgets and workout tracking on the lock screen.",
-			"tools": [
-				"HTML",
-				"CSS",
-				"JavaScript",
-				"Supabase",
-				"OpenAI",
-				"Netlify"
-			],
-			"image": "/momentum.png",
-			"url": "https://momentum-martivilas.netlify.app/"
-		},
-		{
-			"title": "Team Pokédex",
-			"type": "PokeAPI CRUD",
-			"description": "Application for searching Pokémon through PokeAPI, viewing key stats, and managing a custom team.",
-			"tools": [
-				"HTML",
-				"CSS",
-				"JavaScript",
-				"API"
-			],
-			"image": "/pokeApi.png",
-			"url": "https://github.com/MartiVilas/PokeApi"
-		},
-		{
-			"title": "Fabriqer",
-			"type": "Product",
-			"description": "Software for automating machining quotes from 3D files, calculating materials, times, and costs to generate offers ready to send.",
-			"tools": [
-				"TypeScript",
-				"React",
-				"UI",
-				"UX"
-			],
-			"image": "/fabriqer-login.svg",
-			"url": "https://app.fabriqer.com/login"
-		},
-		{
-			"title": "Commercial Landing Page",
-			"type": "Web",
-			"description": "Website for a podcast recording studio in Barcelona offering sessions with audio, video, lighting, and a technician included.",
-			"tools": [
-				"HTML",
-				"CSS",
-				"JavaScript",
-				"SEO"
-			],
-			"image": "/estudio-podcast-barcelona.png",
-			"url": "https://estudiopodcastbarcelona.com/"
-		}
-	],
 	"cv_label": "CV",
 	"professional_profile_title": "Professional profile",
-	"cv_summary": "Frontend-focused web developer at I-MAS (Barcelona), where I joined as an intern and moved onto a permanent contract. Production applications with React.js and TypeScript, plus backend work with Node.js, in teams working with SCRUM and Agile.",
 	"contact_button": "Contact",
-	"download_cv_button": "Download CV",
-	"cv_highlights": [
-		"Frontend with React.js, TypeScript, Vue.js (Quasar), and Astro.",
-		"State management with Zustand and backend with Node.js + TypeScript.",
-		"Responsive layout and adaptive web application development.",
-		"SCRUM/Agile methodologies: sprints, dailies, code reviews, and retrospectives.",
-		"Also PHP, SQL, MySQL, and Kotlin, with Git and WordPress."
-	],
+	"download_cv_button": "Download CV (English)",
 	"contact_label": "Contact",
 	"contact_title": "Let's talk about your next project",
 	"contact_summary": "Tell me what you have in mind and I will get back to you as soon as possible.",
@@ -133,50 +55,12 @@
 	"contact_success_message": "Message sent. Thank you, I will reply soon.",
 	"contact_error_message": "Could not send it. Check the details or try again later.",
 	"experience_label": "Experience",
-	"learning_by_doing_title": "Where I have learned ",
-	"experiences": [
-		{
-			"role": "Web Developer",
-			"place": "I-MAS",
-			"period": "Sep 2025 - Present (permanent since Jun 2026)",
-			"description": "Frontend development with React.js and TypeScript on live client projects. Global state management with Zustand and backend with Node.js + TypeScript. Design and development of responsive web applications. Deployment and configuration of a WordPress landing page on a client domain, and SCRUM/Agile methodologies. Adoption of generative AI as a complement to my workflow, applied with judgment and personal validation."
-		},
-		{
-			"role": "Textile Sales Associate",
-			"place": "IKEA (Sabadell)",
-			"period": "Jun-Sep 2024 / Jun-Sep 2025",
-			"description": "Customer service, query handling, and stock management within the section."
-		},
-		{
-			"role": "Warehouse Operative",
-			"place": "Mango / Punto Fa S.L. (Lliçà d'Amunt)",
-			"period": "Aug 2021 - Aug 2023",
-			"description": "Packaging, garment distribution, and warehouse organization."
-		},
-		{
-			"role": "Sports Coach / Activity Leader",
-			"place": "Escola Sant Gervasi (Mollet del Vallès)",
-			"period": "Sep 2019 - 2022",
-			"description": "Extracurricular basketball coach for students aged 9 to 11."
-		}
-	],
+	"learning_by_doing_title": "Professional experience",
 	"education_label": "Education",
 	"education_title": "Education",
-	"studies": [
-		{
-			"title": "Higher Diploma in Web Application Development (DAW) - EQF Level 5",
-			"center": "Institut Tecnològic de Barcelona",
-			"period": "Sep 2023 - Jun 2026",
-			"description": "Official program covering frontend and backend development, databases, deployment, and agile methodologies. The core of my current technical profile.",
-			"badge": "Completed",
-			"featured": true
-		},
-		{
-			"title": "Spanish Baccalaureate - Social Sciences & Economics",
-			"center": "I.E.S Rovira-Forns / Escola Sant Gervasi",
-			"period": "Sep 2019 - Jun 2022",
-			"badge": "Completed",
-			"featured": true
-		}
-	]
+	"skip_content": "Skip to content",
+	"role_label": "My contribution",
+	"context_label": "Problem",
+	"result_label": "Current status",
+	"view_project": "Visit project"
 }
